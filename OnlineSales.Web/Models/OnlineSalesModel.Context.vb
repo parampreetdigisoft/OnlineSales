@@ -15,15 +15,19 @@ Namespace OnlineSales.Web
 
     Partial Public Class OnlineSalesEntities
         Inherits DbContext
-    
+
         Public Sub New()
             MyBase.New("name=OnlineSalesEntities")
         End Sub
-    
+
         Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
-            Throw New UnintentionalCodeFirstException()
+            Dim cust = modelBuilder.Entity(Of OurCustomer)()
+            cust.[Property](Function(f) f.OpenDate).HasColumnType("smalldatetime")
+            Dim login = modelBuilder.Entity(Of C_login)()
+            login.[Property](Function(f) f.Signup).HasColumnType("smalldatetime")
+            MyBase.OnModelCreating(modelBuilder)
         End Sub
-    
+
         Public Overridable Property C_login() As DbSet(Of C_login)
         Public Overridable Property Affiliates() As DbSet(Of Affiliate)
         Public Overridable Property AffiliateLinks() As DbSet(Of AffiliateLink)
@@ -130,7 +134,7 @@ Namespace OnlineSales.Web
         Public Overridable Property qryOrderTotals() As DbSet(Of qryOrderTotal)
         Public Overridable Property qryQbOrdersToProcesses() As DbSet(Of qryQbOrdersToProcess)
         Public Overridable Property qryTaxStatew_Name() As DbSet(Of qryTaxStatew_Name)
-    
+
     End Class
 
 End Namespace

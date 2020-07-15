@@ -20,7 +20,7 @@ Public Class AccountService
             .DirectFlag = False,
             .SignupStep = 0,
             .ServiceLevel = 1,
-            .OpenDate = "2020-07-14 12:38:00",
+            .OpenDate = DateTime.UtcNow,
             .Affiliate = False,
             .Qbooks = False,
             .Coupons = False,
@@ -52,10 +52,10 @@ Public Class AccountService
             .AccessLevel = 1,
             .Master = False,
             .Active = False,
-            .Signup = "2020-07-08 18:51:00"
+            .Signup = DateTime.UtcNow
         }
             _loginRepository.Add(login)
-            Return _ourCustomerRepository.GetById(cutomer.UserId)
+            Return _ourCustomerRepository.GetDataById(cutomer.UserId)
         Else
             Return Nothing
         End If

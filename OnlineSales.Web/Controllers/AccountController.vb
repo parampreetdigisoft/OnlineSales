@@ -1,12 +1,15 @@
-﻿Imports System.Web.Mvc
+﻿Imports System.Web.Configuration
+Imports System.Web.Mvc
 
 Namespace Controllers
     Public Class AccountController
         Inherits Controller
 
+        Public Shared Property WebUrl As String
         Private Property _accountService As IAccount
 
         Public Sub New()
+            WebUrl = WebConfigurationManager.AppSettings("WebUrl")
             _accountService = New AccountService()
         End Sub
 
@@ -47,9 +50,9 @@ Namespace Controllers
         <HttpPost>
         Public Function Signup(ByVal signupViewModel As SignupViewModel) As ActionResult
             Try
-                Dim resut = _accountService.SignUp(signupViewModel)
-                If resut IsNot Nothing Then
-                    Dim link As String = "https://localhost:44340/Account/ConfirmPassword?key=" + resut.APIkey
+                Dim result = _accountService.SignUp(signupViewModel)
+                If result IsNot Nothing Then
+                    Dim link As String = WebUrl + "Account/ConfirmPassword?key=" + result.APIkey
                     Dim emailContent As String = Utils.VerificationPasswordContent(signupViewModel.StoreName, link)
                     Utils.SendEmail(signupViewModel.Email, emailContent, "Password Veification Link")
                     Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})

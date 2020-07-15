@@ -13,6 +13,10 @@ Public Class OurCustomerRepository
     Public Function GetByApiKey(apiKey As String) As OurCustomer
         Return _context.OurCustomers.FirstOrDefault(Function(x) x.APIkey.ToLower().Trim() = apiKey.ToLower().Trim())
     End Function
+
+      Public Function GetDataById(id As Integer) As OurCustomer
+        Return _context.OurCustomers.FirstOrDefault(Function(x) x.UserId = id)
+    End Function
 End Class
 
 
