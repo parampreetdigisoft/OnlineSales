@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26ecd9e3176e491a915f2fa6f07d0549" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineSales2Model.C_login" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Affiliate" Width="1.5" PointX="7.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.AffiliateLink" Width="1.5" PointX="7.5" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.AffiliateList" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.AffiliateProgram" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.AffiliateProgramNew" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.BuildaLink" Width="1.5" PointX="5.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CaptureEmail" Width="1.5" PointX="12.75" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CartSetup" Width="1.5" PointX="5.25" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogImage" Width="1.5" PointX="15.75" PointY="49.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogItem" Width="1.5" PointX="13.5" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogLevel1" Width="1.5" PointX="5.25" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogLevel1_2s" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogLevel2" Width="1.5" PointX="7.5" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogLevel3" Width="1.5" PointX="5.25" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Category" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ColorPalette" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ColorPaletteNew" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Contact" Width="1.5" PointX="0.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Country" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Coupon" Width="1.5" PointX="5.25" PointY="57.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Customer" Width="1.5" PointX="5.25" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CustomerSelectPlan" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Download" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.EzShip" Width="1.5" PointX="5.25" PointY="70.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.FedexShipping" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.GetResponse_CustomerCampaign" Width="1.5" PointX="15.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.HelpMessage" Width="1.5" PointX="15.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemOption" Width="1.5" PointX="5.25" PointY="74.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemOptionGroup" Width="1.5" PointX="5.25" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemOptionGroup1" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemOptionNew" Width="1.5" PointX="15.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemOption1" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemSubOption" Width="1.5" PointX="5.25" PointY="81.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemSubOption1" Width="1.5" PointX="15.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemUpsell" Width="1.5" PointX="5.25" PointY="84.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemUpsellGroup" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ItemUpsell1" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Language" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Language1" Width="1.5" PointX="17.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.MasterAccount" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OrderDetail" Width="1.5" PointX="15.75" PointY="56.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OrderDetailOption" Width="1.5" PointX="7.5" PointY="74.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OrderHeader" Width="1.5" PointX="10.5" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OrderSubOption" Width="1.5" PointX="9.75" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OurAffiliate" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OurCustomer" Width="1.5" PointX="3" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OurCustPayment" Width="1.5" PointX="5.25" PointY="87.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.PaypalIntegration" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.PaypalPaymentHistory" Width="1.5" PointX="19.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.QuantityDiscount" Width="1.5" PointX="5.25" PointY="90.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.QuickBookCustomer" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.QuickbooksConnectionHistory" Width="1.5" PointX="9.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.QuickBooksCustomerAccountInformation" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.SecurityObject" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Session" Width="1.5" PointX="11.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.SingleCoupon" Width="1.5" PointX="5.25" PointY="94" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.SplitTest" Width="1.5" PointX="2.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.SplitTestCapture" Width="1.5" PointX="7.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.SplitTestLink" Width="1.5" PointX="5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.StateCode" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.sysdiagram" Width="1.5" PointX="15.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.TaxState" Width="1.5" PointX="5.25" PointY="96.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.UserSecurity" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.USPSShipping" Width="1.5" PointX="19.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Visitor" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.VisitorAction" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.VisitorTracking" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.ColorPaletteOld" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CountryCodesComplete" Width="1.5" PointX="17.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.Currency" Width="1.5" PointX="19.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.License" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.LicenseTrack" Width="1.5" PointX="21.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.MacAddress" Width="1.5" PointX="21.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.OrderDetailOLD" Width="1.5" PointX="21.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.UpsShippnngCode" Width="1.5" PointX="21.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.UpsSignup" Width="1.5" PointX="21.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.CatalogItemByAPIkey" Width="1.5" PointX="13.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryActiveCoupon" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryAffiliateLink" Width="1.5" PointX="23.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryBasicCatalogItem" Width="1.5" PointX="23.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryBasicCatalogMaint" Width="1.5" PointX="23.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCartSetup" Width="1.5" PointX="7.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCartSetupNew" Width="1.5" PointX="9.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCatalogItem" Width="1.5" PointX="15.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCatalogItemByAPIkey" Width="1.5" PointX="17.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCatalogItemList_Level1" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCatalogItemList_Level2" Width="1.5" PointX="25.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCatalogItemList_level3" Width="1.5" PointX="25.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCatalogItemListWide_Level3" Width="1.5" PointX="11.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCompleteCatalog" Width="1.5" PointX="25.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCompleteOrder" Width="1.5" PointX="23.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCompleteOrderWithDetail" Width="1.5" PointX="25.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryCompleteOrderWithDetail1" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryForSaveThisOrder" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryLogin" Width="1.5" PointX="27.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryNewCartSetup" Width="1.5" PointX="27.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderDetail" Width="1.5" PointX="17.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderDetailOnlyWithOption" Width="1.5" PointX="19.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderDetailOptionTotal" Width="1.5" PointX="27.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderDetailWithOptionsOLD" Width="1.5" PointX="27.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderOption" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderSubOption" Width="1.5" PointX="29.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryOrderTotal" Width="1.5" PointX="29.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryQbOrdersToProcess" Width="1.5" PointX="2.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSales2Model.qryTaxStatew_Name" Width="1.5" PointX="29.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineSales2Model.FK__login_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OurAffiliate__login" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_Affiliate_AffiliateProgram" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_AffiliateLinks_AffiliateProgram" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_AffiliateProgram_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_BuildaLink_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_CaptureEmail_OrderHeader1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_CartSetup_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_CatalogImages_CatalogItem" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderDetail_CatalogItem" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_CatalogLevel1_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_Department_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_mCategories_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OurCustomer_Contact" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_Coupons_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_Customer_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderHeader_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_EzShip_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_ItemOption_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderDetailOptions_ItemOption" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OptionGroup_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_MenuSubOptions_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderSubOptions_ItemSubOption" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_ItemUpsell_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderDetail_OrderHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderSubOptions_OrderDetailOptions" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OrderHeader_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_OurCustPayments_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_QuantityDiscount_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_SingleCoupons_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_TaxState_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_QuickBookCustomer_QuickBookCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_UserSecurity_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_SplitTestLink_SplitTest" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_SplitTestCapture_SplitTestLink" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_VisitorTracking_Visitor" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_VisitorTracking_VisitorActions" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.FK_VisitorTracking_VisitorTracking" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.CatalogLevel2_3s" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.Login_OurCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineSales2Model.LoginUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
