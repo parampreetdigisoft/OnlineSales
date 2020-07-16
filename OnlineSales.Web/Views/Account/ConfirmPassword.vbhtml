@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.vbhtml"
 End Code
 
-@Html.BeginForm("ConfirmPaasword", "Account", FormMethod.Post, New With {.id = "confirm-password"}){
+@Html.BeginForm("ConfirmPassword", "Account", FormMethod.Post, New With {.id = "confirm-password"}){
 <section class="login-div confirm-password">
     <div class="container">
         <input type="hidden" class="form-control" id="ApiKey" value="@Model.ApiKey" />
@@ -19,7 +19,9 @@ End Code
                                    class="form-control"
                                    id="password"
                                    placeholder="Password" />
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            @*pass password textbox id in both methods (showpassword and hidepaasword)*@
+                            <i class="fa fa-eye-slash cursor-pointer" id="eyeSlash" aria-hidden="true" onclick="showPassword('password')"></i>
+                            <i class="fa fa-eye cursor-pointer d-none" id="eye" aria-hidden="true" onclick="hidePassword('password')"></i>
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,7 +36,7 @@ End Code
                     <div class="form-group">
                         <label class="container-checkbox">
                             I accept the <a href="">Service Agreement</a>
-                            <input type="checkbox" checked="checked" />
+                            <input type="checkbox" checked="checked" id="service-agreement" />
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -65,6 +67,13 @@ End Code
             $("#confirmPassword").addClass("is-invalid");
             isValid = false;
         }
+
+        if (!$("#service-agreement").is(":checked")) {
+            $(".error_message").html("<div class='alert alert-danger'>Please accept the service agrrement.</div>");
+            isValid = false;
+        }
+
+
         if (!isValid) {
             return false;
         }
@@ -94,18 +103,23 @@ End Code
                 dataType: "json",
                 success: function (data) {
                     if (data.Success === true) {
-                        window.location.href = "/Account/Index";
+                        SuccessMessage("Update Successfully.");
+                        setTimeout(function () {
+                            window.location.href = "/Account/Index";
+                        }, 2000);
                     }
                     else {
-                        ErrorMessage("An error occured.");
+                        ErrorMessage(ErrorMessageContent());
                         return false;
                     }
                 },
                 error: function (er) {
-                    ErrorMessage("An error occured.");
+                    ErrorMessage(ErrorMessageContent());
                     console.log(er);
                 }
             });
         }
     }
+
+   
 </script>

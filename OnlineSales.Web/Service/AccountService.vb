@@ -2,15 +2,26 @@
 
 Public Class AccountService
     Implements IAccount
+
+#Region "Properties"
     Private Property _ourCustomerRepository As OurCustomerRepository
     Private Property _loginRepository As LoginRepository
+#End Region
 
-
+#Region "Constructor"
     Public Sub New()
         _ourCustomerRepository = New OurCustomerRepository()
         _loginRepository = New LoginRepository()
     End Sub
+#End Region
 
+#Region "Methods"
+
+    ''' <summary>
+    ''' sign up our customer
+    ''' </summary>
+    ''' <param name="signupViewModel"></param>
+    ''' <returns></returns>
     Public Function SignUp(ByVal signupViewModel As SignupViewModel) As OurCustomer Implements IAccount.SignUp
         Dim cutomer As OurCustomer = New OurCustomer With {
             .Email = signupViewModel.Email,
@@ -55,39 +66,71 @@ Public Class AccountService
             .Signup = DateTime.UtcNow
         }
             _loginRepository.Add(login)
-            Return _ourCustomerRepository.GetDataById(cutomer.UserId)
+            _ourCustomerRepository = New OurCustomerRepository()
+            Dim test = _ourCustomerRepository.GetDataById(cutomer.UserId)
+            Return test
         Else
             Return Nothing
         End If
     End Function
 
-    Public Function Authenticate(ByVal loginViewModel As LoginViewModel) As Boolean Implements IAccount.Authenticate
-        'Dim cutomer As OurCustomer = New OurCustomer With {
-        '    .Email = SignupViewModel.Email,
-        '    .SubDomain = CreateSubdomain(SignupViewModel.StoreName)
-        '}
-
-        ''check subdomain name is already exist or not
-        'Dim ourCustomer = _ourCustomerRepository.GetBySubdomain(cutomer.SubDomain)
-        'If ourCustomer IsNot Nothing Then
-        '    _ourCustomerRepository.Add(cutomer)
-        '    _ourCustomerRepository.Save()
-        '    Return True
-        'Else
-        '    Return False
-        'End If
-        Return True
+    ''' <summary>
+    ''' authenticate user
+    ''' </summary>
+    ''' <param name="loginViewModel"></param>
+    ''' <returns></returns>
+    Public Function Authenticate(ByVal loginViewModel As LoginViewModel) As ResponseViewModel Implements IAccount.Authenticate
+        Dim responseViewModel As ResponseViewModel = New ResponseViewModel
+        ' get login info by username
+        Dim login = _loginRepository.GetByEmail(loginViewModel.Username)
+        ' check username is exist or not
+        If (login Is Nothing) Then
+            responseViewModel.Status = False
+            responseViewModel.Message = "Incorrect Username or Email"
+        Else
+            ' check password is match or not
+            Dim encryptPassword = Encryption.Encrypt(loginViewModel.Password)
+            If login.Password = encryptPassword Then
+                responseViewModel.Status = True
+                responseViewModel.Message = "Successfully Login"
+            Else
+                responseViewModel.Status = False
+                responseViewModel.Message = "Incorrect Password"
+            End If
+        End If
+        Return responseViewModel
     End Function
 
+    ''' <summary>
+    ''' update password
+    ''' </summary>
+    ''' <param name="userViewModel"></param>
     Sub UpdatePassword(ByVal userViewModel As UserViewModel) Implements IAccount.UpdatePassword
+        ' get customer info by apikey
         Dim ourCustomer = _ourCustomerRepository.GetByApiKey(userViewModel.ApiKey)
-        Dim login = _loginRepository.GetById(ourCustomer.UserId)
-        ' need to do save encrypted password
+        ' get login info by user id
+        Dim login = _loginRepository.GetByUserId(ourCustomer.UserId)
         If login IsNot Nothing Then
-            login.Password = userViewModel.Password
+            ' update password into login table
+            login.Password = Encryption.Encrypt(userViewModel.Password)
             login.Active = True
             _loginRepository.Update(login)
+
+            ' Update into ourcutomer table
+            ourCustomer.EmailVerified = True
+            ourCustomer.SignupStep = True
+            _ourCustomerRepository.Update(ourCustomer)
         End If
     End Sub
+
+    ''' <summary>
+    ''' get ourcutomer detail by email address
+    ''' </summary>
+    ''' <param name="email"></param>
+    ''' <returns></returns>
+    Public Function GetOurCustomerByEmail(ByVal email As String) As OurCustomer Implements IAccount.GetOurCustomerByEmail
+        Return _ourCustomerRepository.GetbyEmailAddress(email)
+    End Function
+#End Region
 
 End Class

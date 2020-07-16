@@ -1,11 +1,12 @@
 ﻿Imports System.Data.Entity
+Imports System.Data.Entity.Migrations
 Imports OnlineSales.Web.OnlineSales.Web
 
 Public Class GenericRepository(Of T As Class)
     Implements IRepository(Of T)
 
-    Private ReadOnly _context As OnlineSalesEntities
-    Private _table As DbSet(Of T)
+    Public ReadOnly _context As OnlineSalesEntities
+    Public _table As DbSet(Of T)
     Public Sub New()
         _context = New OnlineSalesEntities()
         _table = _context.Set(Of T)()
@@ -23,8 +24,11 @@ Public Class GenericRepository(Of T As Class)
     End Sub
 
     Public Function Update(record As T) As T Implements IRepository(Of T).Update
-        _table.Attach(record)
-        _context.Entry(record).State = EntityState.Modified
+        _table.AddOrUpdate(record)
+        If _context.Entry(record).State = EntityState.Detached Then
+            _context.Entry(record).State = EntityState.Modified
+        End If
+        '_context.Entry(record).State = EntityState.Modified
         _context.SaveChanges()
         Return record
     End Function
