@@ -129,7 +129,7 @@ section.login-div {
         height: 1px;
         content: "";
         width: 65px;
-        background: #0c9348;
+        /*background: #0c9348;*/
         position: absolute;
         bottom: 1px;
         left: 53px;

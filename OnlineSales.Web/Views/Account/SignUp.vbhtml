@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.vbhtml"
 End Code
 
-@Html.BeginForm("Signup", "Account", FormMethod.Post, New With {.id = "SignupForm"}){
 <section class="login-div signup-div">
     <div class="container">
         <div class="row">
@@ -62,7 +61,7 @@ End Code
         </div>
     </div>
 </section>
-    }
+
 <script type="text/javascript">
     function Signup() {
         var isValid = true;

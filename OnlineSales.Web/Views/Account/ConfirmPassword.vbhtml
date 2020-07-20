@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_Layout.vbhtml"
 End Code
 
-@Html.BeginForm("ConfirmPassword", "Account", FormMethod.Post, New With {.id = "confirm-password"}){
 <section class="login-div confirm-password">
     <div class="container">
         <input type="hidden" class="form-control" id="ApiKey" value="@Model.ApiKey" />
@@ -49,7 +48,6 @@ End Code
         </div>
     </div>
 </section>
-}
 
 <script type="text/javascript">
     function SavePassword() {
