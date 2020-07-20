@@ -8,9 +8,9 @@ Namespace Controllers
     Public Class StripeController
         Inherits Controller
 
-        Function Index(ByVal code As String, ByVal scope As String, ByVal state As String) As ActionResult
+        Function Index(ByVal code As String, ByVal scope As String, ByVal state As String) As String
             Dim result = GetStripeKey(code)
-            Return View()
+            Return code
         End Function
 
         Function GetStripeKey(ByVal code As String) As String
