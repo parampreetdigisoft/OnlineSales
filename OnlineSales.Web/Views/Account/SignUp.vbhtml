@@ -98,7 +98,7 @@ End Code
             signupViewModel.Email = email;
             signupViewModel.StoreName = storeName;
             signupViewModel.Coupon = coupon;
-
+            showLoader();
             $.ajax({
                 url: "/Account/Signup",
                 type: "POST",
@@ -106,16 +106,16 @@ End Code
                 contentType: 'application/json',
                 dataType: "json",
                 success: function (data) {
-                    console.log(data);
                     if (data.Success === true) {
                         window.location.href = "/Account/EmailSent";
                     }
                     else {
-                        WarningMessage(data.Message);
-                        return false;
+                        WarningMessage(data.Message);                        
                     }
+                    hideLoader();
                 },
                 error: function (er) {
+                    hideLoader();
                     ErrorMessage("An error occured.");
                     console.log(er);
                 }

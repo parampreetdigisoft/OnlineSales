@@ -39,6 +39,7 @@ End Code
         var obj = {};
         obj.email = email;
         if (isValid) {
+            showLoader();
             $.ajax({
                 url: "/Account/ForgotPassword",
                 type: "POST",
@@ -51,10 +52,11 @@ End Code
                     }
                     else {
                         ErrorMessage(data.Message);
-                        return false;
                     }
+                hideLoader();
                 },
                 error: function (er) {
+                hideLoader();
                     ErrorMessage(ErrorMessageContent());
                     console.log(er);
                 }

@@ -92,7 +92,7 @@ End Code
             var userViewModel = {};
             userViewModel.ApiKey = apiKey;
             userViewModel.Password = password;
-
+            showLoader();
             $.ajax({
                 url: "/Account/ConfirmPassword",
                 type: "POST",
@@ -107,17 +107,16 @@ End Code
                         }, 2000);
                     }
                     else {
-                        ErrorMessage(ErrorMessageContent());
-                        return false;
+                        ErrorMessage(ErrorMessageContent());                        
                     }
+                    hideLoader();
                 },
                 error: function (er) {
+                    hideLoader();
                     ErrorMessage(ErrorMessageContent());
                     console.log(er);
                 }
             });
         }
     }
-
-
 </script>
