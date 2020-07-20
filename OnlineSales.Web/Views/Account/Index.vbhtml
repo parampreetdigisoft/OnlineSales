@@ -12,7 +12,6 @@ End Code
 </script>
 
 @Html.BeginForm("Index", "Account", FormMethod.Post, New With {.id = "LoginForm"}){
-@Html.ValidationSummary(True)
 <section Class="login-div">
     <div Class="container">
         <div Class="row">
@@ -27,7 +26,7 @@ End Code
                         <div Class="for-icon">
                             @Html.TextBoxFor(Function(model) model.Username, New With {Key .class = "form-control", Key .Type = "email"})
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            @Html.ValidationMessageFor(Function(model) model.Username)
+                            @Html.ValidationMessageFor(Function(model) model.Username, "", New With {.Class = "text-danger"})
                         </div>
                     </div>
                     <div Class="form-group">
@@ -37,13 +36,19 @@ End Code
                             @*pass password textbox id in both methods (showpassword and hidepaasword)*@
                             <i class="fa fa-eye-slash cursor-pointer" id="eyeSlash" aria-hidden="true" onclick="showPassword('password')"></i>
                             <i class="fa fa-eye cursor-pointer d-none" id="eye" aria-hidden="true" onclick="hidePassword('password')"></i>
-                            @Html.ValidationMessageFor(Function(model) model.Password)
+                            @Html.ValidationMessageFor(Function(model) model.Password, "", New With {.Class = "text-danger"})
                         </div>
                     </div>
-                    <input type="submit" Class="btn custom-btn mt-3" value="Access"/>
+                    <input type="submit" Class="btn custom-btn mt-3" value="Access" />
                     @Html.ActionLink("Forgot your password?", "ForgotPassword", "Account", New With {.class = "forget-password"})
                     @Html.ActionLink("Sign up", "Signup", "Account", New With {.class = "btn custom-btn"})
-                    <div class="form-group"><div class="error_message"></div></div>
+                    @If (Model IsNot Nothing) Then
+                        If (Model.Message IsNot Nothing) Then
+                            @<div Class="form-group">
+                                <div Class="error_message text-danger mt-3">@Model.Message</div>
+                            </div>
+                        End If
+                    End If
                 </div>
             </div>
         </div>

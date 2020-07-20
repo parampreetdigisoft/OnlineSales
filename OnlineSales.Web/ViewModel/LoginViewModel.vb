@@ -6,4 +6,5 @@ Public Class LoginViewModel
     Public Property Username As String
     <Required(ErrorMessage:="Password is required")>
     Public Property Password As String
+    Public Property Message As String
 End Class

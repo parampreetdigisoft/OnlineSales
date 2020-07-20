@@ -27,7 +27,11 @@ Namespace Controllers
 
 #Region "Methods"
         Function Index() As ActionResult
-            Return View(New LoginViewModel())
+            Dim loginviewModel As LoginViewModel = New LoginViewModel()
+            If (TempData("loginModel") IsNot Nothing) Then
+                loginviewModel = TempData("loginModel")
+            End If
+            Return View(loginviewModel)
         End Function
 
         ''' <summary>
@@ -42,12 +46,13 @@ Namespace Controllers
                 Dim resut As ResponseViewModel
                 resut = _accountService.Authenticate(loginViewModel)
                 If resut.Status = False Then
-                    ModelState.AddModelError("", resut.Message)
+                    loginViewModel.Message = resut.Message
+                    TempData("loginModel") = loginViewModel
+                    Return RedirectToAction("Index", "Account")
                 Else
                     SignIn(loginViewModel)
                     Return RedirectToAction("Index", "Home")
                 End If
-                Return View()
             Else
                 Return View()
             End If
