@@ -118,8 +118,8 @@ Public Class AccountService
             _loginRepository.Update(login)
 
             ' Update into ourcutomer table
-            ourCustomer.EmailVerified = True
-            ourCustomer.SignupStep = True
+            ourCustomer.EmailVerified = 1
+            ourCustomer.SignupStep = 1
             _ourCustomerRepository.Update(ourCustomer)
         End If
     End Sub

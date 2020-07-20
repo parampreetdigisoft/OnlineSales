@@ -28,7 +28,6 @@ Public Class GenericRepository(Of T As Class)
         If _context.Entry(record).State = EntityState.Detached Then
             _context.Entry(record).State = EntityState.Modified
         End If
-        '_context.Entry(record).State = EntityState.Modified
         _context.SaveChanges()
         Return record
     End Function
