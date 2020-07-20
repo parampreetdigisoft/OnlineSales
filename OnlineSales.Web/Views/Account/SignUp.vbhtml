@@ -9,7 +9,7 @@ End Code
 <section class="login-div signup-div">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-5 mx-auto">
+            <div class="col-md-7 col-lg-5 mx-auto">
                 <div class="inner-login-div">
                     <h4>This is the Signup form</h4>
                     <figure>

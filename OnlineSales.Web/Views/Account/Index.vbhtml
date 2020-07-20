@@ -11,14 +11,14 @@ End Code
     });
 </script>
 
-@Html.BeginForm("Index", "Account", FormMethod.Post, New With {.id = "LoginForm"}){
+@Html.BeginForm("Index", "Account", FormMethod.Post, New With {.id = "LoginForm"})
 <section Class="login-div">
     <div Class="container">
         <div Class="row">
-            <div Class="col-md-6 col-lg-5 mx-auto">
+            <div Class="col-md-7 col-lg-5 mx-auto">
                 <div Class="inner-login-div">
                     <span Class="user-round">
-                        <i Class="fa fa-user" aria-hidden="true"></i>
+                        <img src="~/images/user.png" />
                     </span>
                     <h4> Login</h4>
                     <div Class="form-group">
@@ -31,7 +31,7 @@ End Code
                     </div>
                     <div Class="form-group">
                         <Label for="exampleInputPassword1">Password</Label>
-                        <div Class="for-icon">
+                        <div Class="for-icon green-border">
                             @Html.PasswordFor(Function(model) model.Password, New With {Key .class = "form-control", Key .Type = "password", Key .id = "password"})
                             @*pass password textbox id in both methods (showpassword and hidepaasword)*@
                             <i class="fa fa-eye-slash cursor-pointer" id="eyeSlash" aria-hidden="true" onclick="showPassword('password')"></i>
@@ -54,4 +54,4 @@ End Code
         </div>
     </div>
 </section>
-    }
+

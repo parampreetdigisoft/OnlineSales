@@ -685,7 +685,9 @@
     </EntityDeploy>
     <Content Include="Images\group.jpg" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\nifty-logo.png" />
+    <Content Include="Images\user.png" />
     <Content Include="Models\OnlineSalesModel.edmx.diagram">
       <DependentUpon>OnlineSalesModel.edmx</DependentUpon>
     </Content>

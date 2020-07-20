@@ -1,4 +1,4 @@
-﻿@ModelType OnlineSales.Web.UserViewModel 
+﻿@ModelType OnlineSales.Web.UserViewModel
 @Code
     ViewData("Title") = "ConfirmPassword"
     Layout = "~/Views/Shared/_Layout.vbhtml"
@@ -10,7 +10,7 @@ End Code
         <input type="hidden" class="form-control" id="ApiKey" value="@Model.ApiKey" />
         <h1>Thanks for confirming your Email</h1>
         <div class="row">
-            <div class="col-md-6 col-lg-5 mx-auto">
+            <div class="col-md-7 col-lg-5 mx-auto">
                 <div class="inner-login-div">
                     <h4>Please create a password for your account</h4>
                     <div class="form-group">
@@ -85,10 +85,10 @@ End Code
 
         var error = "Password Requires :<br /><br />1. Minimum 8 characters<br />2. Maximum 20 characters<br />3. At least one uppercase character<br />4. At least one lowercase character<br />5. At least one digit<br />6. At least one special character";
         var strongRegex = new RegExp(/^(?=.*\d)(?=.*[!@@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
-         if (!strongRegex.test(password)) {
-              $(".error_message").html("<div class='alert alert-danger text-left'>" + error + "</div>");
-              return false;
-         }
+        if (!strongRegex.test(password)) {
+            $(".error_message").html("<div class='alert alert-danger text-left'>" + error + "</div>");
+            return false;
+        }
 
         if (isValid) {
             var userViewModel = {};
@@ -121,5 +121,5 @@ End Code
         }
     }
 
-   
+
 </script>

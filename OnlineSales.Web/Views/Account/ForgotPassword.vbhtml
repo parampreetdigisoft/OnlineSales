@@ -7,7 +7,7 @@ End Code
     <div class="container">
         <h1>Reset your password</h1>
         <div class="row">
-            <div class="col-md-6 col-lg-5 mx-auto">
+            <div class="col-md-7 col-lg-5 mx-auto">
                 <div class="inner-login-div">
                     <h4>Please enter an email</h4>
                     <div class="form-group">

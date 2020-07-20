@@ -22,11 +22,11 @@
 <body>
     <header>
         <div class="logo-div">
-            <a href=""><img src="~/Images/logo.jpg" /></a>
+            <a href=""><img src="~/Images/logo.png" /></a>
             @If User.Identity.IsAuthenticated Then
-                @<a Class="btn btn-success" href="/Account/Logout" style="float:right;">Log Out</a>
+                @<a Class="btn btn-success login-button" href="/Account/Logout" style="float:right;">Log Out</a>
             Else
-                @<a Class="btn btn-success" href="/Account/Index" style="float:right;">Login</a>
+                @<a Class="btn btn-success login-button" href="/Account/Index" style="float:right;">Login</a>
             End If
         </div>
 

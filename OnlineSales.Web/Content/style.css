@@ -1,3 +1,7 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .logo-div {
   background: #0c9348;
   padding: 10px;
@@ -23,10 +27,10 @@ section.login-div {
 }
 
 .inner-login-div {
-  padding: 20px;
-  box-shadow: 0 10px 20px rgba(47, 47, 47, 0.1);
-  border-radius: 10px;
-  margin-top: 100px;
+    padding: 35px 25px 25px 25px;
+    box-shadow: 0 10px 20px rgba(47, 47, 47, 0.1);
+    border-radius: 10px;
+    margin-top: 100px;
 }
 
 .inner-login-div .user-round {
@@ -36,22 +40,29 @@ section.login-div {
   border-radius: 100%;
   background-color: #bdbdbd;
   color: #ffffff;
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   margin: 0 auto;
   font-size: 20px;
 }
 
-.inner-login-div h4 {
-  font-size: 20px;
-  color: #6d6d6d;
-  text-align: center;
-  padding: 10px 0;
-}
+    .inner-login-div .user-round img
+    {
+        width:20px;
+    }
 
-.inner-login-div label {
-  color: #6d6d6d;
-}
+    .inner-login-div h4 {
+        font-size: 18px;
+        color: #272727;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: 400;
+    }
+
+    .inner-login-div label {
+        color: #6d6d6d;
+        font-size: 14px;
+    }
 
 .inner-login-div .form-control {
   border-radius: 0;
@@ -61,21 +72,21 @@ section.login-div {
   padding-right: 30px;
 }
 
-.inner-login-div .form-control::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #bdbdbd;
-  opacity: 1; /* Firefox */
-}
+    .inner-login-div .form-control::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #585858;
+        opacity: 1; /* Firefox */
+    }
 
-.inner-login-div .form-control:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #bdbdbd;
-}
+    .inner-login-div .form-control:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #585858;
+    }
 
-.inner-login-div .form-control::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #bdbdbd;
-}
+    .inner-login-div .form-control::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #585858;
+    }
 
 .inner-login-div .form-control:focus {
   color: #000000;
@@ -85,27 +96,44 @@ section.login-div {
   box-shadow: none;
 }
 
-.inner-login-div .custom-btn {
-  width: 100%;
-  background: #0c9348;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 500;
-}
+    .inner-login-div .custom-btn {
+        width: 100%;
+        background: #0c9348;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-.inner-login-div .forget-password {
-  display: block;
-  color: #0c9348;
-  text-transform: uppercase;
-  font-weight: 500;
-  text-align: center;
-  padding: 14px;
-}
+    .inner-login-div .forget-password {
+        display: block;
+        color: #0c9348;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-align: center;
+        padding: 6px 10px;
+        border: 1px solid #c4c4c4;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
 
 .inner-login-div .for-icon {
   position: relative;
 }
+
+    .inner-login-div .for-icon.green-border:after {
+        height: 1px;
+        content: "";
+        width: 65px;
+        background: #0c9348;
+        position: absolute;
+        bottom: 1px;
+        left: 53px;
+    }
 
 .inner-login-div .for-icon i {
   position: absolute;
@@ -115,12 +143,19 @@ section.login-div {
 }
 
 .confirm-password .inner-login-div {
-  margin-top: 100px;
-  margin-top: 40px;
+    margin-top: 0;
+    box-shadow: none;
 }
 
+    .confirm-password .inner-login-div .custom-btn {
+
+        display: table;
+        margin: 0 auto;
+        width: auto;
+    }
+
 .confirm-password h1 {
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   color: #545454;
   font-weight: 400;
@@ -158,7 +193,7 @@ section.login-div {
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 0;
+  top: -3px;
   left: 0;
   height: 20px;
   width: 20px;
@@ -172,8 +207,9 @@ section.login-div {
 }
 
 .container-checkbox input:checked ~ .checkmark {
-  background-color: #0c9348;
-  border-color: #0c9348;
+    background-color: #0c9348;
+    border-color: #0c9348;
+    top: -3px;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -202,17 +238,23 @@ section.login-div {
 }
 
 .confirm-password h4 {
-  padding-bottom: 30px;
+    padding-bottom: 30px;
+    font-size: 17px;
+    width: calc(100% + 50px);
+    margin-left: -25px;
+    padding-top: 0;
 }
 
 .free-days {
-  color: #0c9348;
-  padding: 20px 0;
-  display: block;
+    color: #272727;
+    padding: 20px 0;
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
 }
 
 .signup-div h6 {
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
   font-weight: 400;
   color: #0c9348;
@@ -240,4 +282,32 @@ section.login-div {
 
 .d-none{
     display:none;
+}
+
+.login-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 17px;
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #0c9348;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+    .login-button:hover {
+        background: #f3b044;
+        border-color: #f3b044;
+    }
+
+.signup-div .inner-login-div h4 {
+    font-weight: 700;
+}
+
+.signup-div .inner-login-div .custom-btn {
+    width: auto;
+
+    margin: 0 auto;
+    display: table;
 }
