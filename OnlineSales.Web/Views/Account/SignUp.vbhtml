@@ -131,14 +131,14 @@ End Code
             }
             var obj = {};
             obj.couponCode = coupon;
+            showLoader();
             $.ajax({
                 url: "/Account/ApplyCoupon",
                 type: "POST",
                 data: JSON.stringify(obj),
                 contentType: 'application/json',
                 dataType: "json",
-                success: function (data) {
-                    console.log(data);
+                success: function (data) {                    
                     if (data.Success === true) {
                         $("#coupon-valid").val(1);
                         $(".couponMessage").removeClass("text-danger").addClass("text-success");
@@ -152,8 +152,10 @@ End Code
                     }
                     $(".couponMessage").html(data.Message);
                     $(".couponMessage").removeClass("d-none");
+                    hideLoader();
                 },
                 error: function (er) {
+                    hideLoader();
                     ErrorMessage("An error occured.");
                     console.log(er);
                 }

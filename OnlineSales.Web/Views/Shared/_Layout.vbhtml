@@ -34,6 +34,13 @@
     <div>
         @RenderBody()
     </div>
+
+    <div id="overlay" style="display:none;">
+        <div class="spinner"></div>
+        <br />
+        Loading...
+    </div>
+
 </body>
 </html>
 <script type="text/javascript">
@@ -77,5 +84,13 @@
         $("#" + textboxId).attr("type", "password");
         $("#eye").addClass("d-none");
         $("#eyeSlash").removeClass("d-none");
+    }
+
+    function showLoader() {
+        $('#overlay').fadeIn();
+    }
+
+    function hideLoader() {
+        $('#overlay').fadeOut();
     }
 </script>

@@ -281,6 +281,7 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\BaseController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -645,6 +646,7 @@
     <Compile Include="Service\Interface\IAccount.vb" />
     <Compile Include="Startup.vb" />
     <Compile Include="ViewModel\EmailContentViewModel.vb" />
+    <Compile Include="ViewModel\StripeViewModel.vb" />
     <Compile Include="ViewModel\ViewExtensions.vb" />
     <Compile Include="ViewModel\ResponseViewModel.vb" />
     <Compile Include="ViewModel\UserViewModel.vb" />
