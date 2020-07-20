@@ -70,8 +70,8 @@ Public Class AccountService
         }
             _loginRepository.Add(login)
             _ourCustomerRepository = New OurCustomerRepository()
-            Dim test = _ourCustomerRepository.GetDataById(cutomer.UserId)
-            Return test
+            Dim ourCustomerInfo = _ourCustomerRepository.GetDataById(cutomer.UserId)
+            Return ourCustomerInfo
         Else
             Return Nothing
         End If
