@@ -45,22 +45,6 @@ Public Class Utils
     End Sub
 
     ''' <summary>
-    ''' verifiction email content
-    ''' </summary>
-    ''' <param name="storeName"></param>
-    ''' <param name="link"></param>
-    ''' <returns></returns>
-    Public Shared Function VerificationPasswordContent(ByVal storeName As String, ByVal link As String) As String
-        Dim content As String
-        Dim userMailLink As String = "mailto:info@NiftyCart.com"
-        content = "<b>Hello " + storeName + ",</b><br/><br/>" + "Welcome to the NiftyCart Tribe. We're here to assist you in getting the most out of your store. <br/><br/>" +
-            "Please confirm your email address by <a href='" + link + "'>clicking here</a>. <br/><br/> Please don't hesitate to contact us if we can be of assistance in any way." +
-            "<br/><br/> Email -  <a href='" + userMailLink + "'>  info@NiftyCart.com </a> or by phone <b>800-211-4931</b> in the US or <b>808-870-8741</b> elsewhere. <br/><br/> Regards, <br/><br/> Nicholas Hurd" +
-            "<br/> <b>NiftyCart.com (a Service of Listening Software, Inc. <br/> P.O. Box 532484 <br/> Kihei, Hi 96753 USA)</b>"
-        Return content
-    End Function
-
-    ''' <summary>
     ''' convert store name to subdomain
     ''' </summary>
     ''' <param name="storeName"></param>

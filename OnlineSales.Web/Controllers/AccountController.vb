@@ -8,6 +8,7 @@ Imports Microsoft.Owin.Security.Cookies
 Imports OnlineSales.Web.OnlineSales.Web
 Imports System.Web
 Imports System.Security.Principal
+Imports System.IO
 
 Namespace Controllers
     Public Class AccountController
@@ -88,9 +89,14 @@ Namespace Controllers
             Try
                 Dim result = _accountService.SignUp(signupViewModel)
                 If result IsNot Nothing Then
-                    Dim link As String = WebUrl + "Account/ConfirmPassword?key=" + result.APIkey
-                    Dim emailContent As String = Utils.VerificationPasswordContent(signupViewModel.StoreName, link)
-                    Utils.SendEmail(signupViewModel.Email, emailContent, "Password Veification Link")
+                    Dim url As String = WebUrl + "Account/ConfirmPassword?key=" + result.APIkey
+                    Dim emailContentViewModel As EmailContentViewModel = New EmailContentViewModel()
+                    emailContentViewModel.UserMailLink = "mailto:info@NiftyCart.com"
+                    emailContentViewModel.Url = url
+                    emailContentViewModel.StoreName = signupViewModel.StoreName
+                    emailContentViewModel.Logo = "~/Images/nifty-logo.png"
+                    Dim html = PartialView("~/Views/Account/_EmailContent.vbhtml", emailContentViewModel).RenderToString()
+                    Utils.SendEmail(signupViewModel.Email, html, "Password Veification Link")
                     Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})
                 Else
                     Return Json(New With {Key .Message = "Store Name is already exist. Please change the name", Key .Success = False})
@@ -98,6 +104,24 @@ Namespace Controllers
             Catch __unusedException1__ As Exception
                 Return Json(New With {Key .Message = "Sorry, An error occurred!", Key .Success = False})
             End Try
+        End Function
+
+        Public Shared Function RenderPartialToString(ByVal controlName As String, ByVal viewData As Object) As String
+            Dim viewPage As ViewPage = New ViewPage() With {
+        .ViewContext = New ViewContext()
+    }
+            viewPage.ViewData = New ViewDataDictionary(viewData)
+            viewPage.Controls.Add(viewPage.LoadControl(controlName))
+            Dim sb As StringBuilder = New StringBuilder()
+
+            Using sw As StringWriter = New StringWriter(sb)
+
+                Using tw As HtmlTextWriter = New HtmlTextWriter(sw)
+                    viewPage.RenderControl(tw)
+                End Using
+            End Using
+
+            Return sb.ToString()
         End Function
 
         ''' <summary>
@@ -116,9 +140,14 @@ Namespace Controllers
         Function ForgotPassword(ByVal email As String) As ActionResult
             Dim result = _accountService.GetOurCustomerByEmail(email)
             If result IsNot Nothing Then
-                Dim link As String = WebUrl + "Account/ConfirmPassword?key=" + result.APIkey
-                Dim emailContent As String = Utils.VerificationPasswordContent(String.Empty, link)
-                Utils.SendEmail(email, emailContent, "Reset Password Link")
+                Dim Url As String = WebUrl + "Account/ConfirmPassword?key=" + result.APIkey
+                Dim emailContentViewModel As EmailContentViewModel = New EmailContentViewModel()
+                emailContentViewModel.UserMailLink = "mailto:info@NiftyCart.com"
+                emailContentViewModel.Url = Url
+                emailContentViewModel.StoreName = String.Empty
+                emailContentViewModel.Logo = "~/Images/nifty-logo.png"
+                Dim html = PartialView("~/Views/Account/_EmailContent.vbhtml", emailContentViewModel).RenderToString()
+                Utils.SendEmail(email, html, "Reset Password Link")
                 Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})
             Else
                 Return Json(New With {Key .Message = "Email not exist. Please check your email address.", Key .Success = False})
@@ -192,5 +221,4 @@ Namespace Controllers
 
 #End Region
     End Class
-
 End Namespace

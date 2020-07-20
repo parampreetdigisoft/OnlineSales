@@ -644,6 +644,8 @@
     <Compile Include="Service\AccountService.vb" />
     <Compile Include="Service\Interface\IAccount.vb" />
     <Compile Include="Startup.vb" />
+    <Compile Include="ViewModel\EmailContentViewModel.vb" />
+    <Compile Include="ViewModel\ViewExtensions.vb" />
     <Compile Include="ViewModel\ResponseViewModel.vb" />
     <Compile Include="ViewModel\UserViewModel.vb" />
     <Compile Include="ViewModel\LoginViewModel.vb" />
@@ -683,6 +685,7 @@
     </EntityDeploy>
     <Content Include="Images\group.jpg" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="Images\nifty-logo.png" />
     <Content Include="Models\OnlineSalesModel.edmx.diagram">
       <DependentUpon>OnlineSalesModel.edmx</DependentUpon>
     </Content>
@@ -726,6 +729,7 @@
     <Content Include="Views\Account\ForgotPassword.vbhtml" />
     <Content Include="Views\Account\ConfirmPassword.vbhtml" />
     <Content Include="Views\Account\EmailSent.vbhtml" />
+    <Content Include="Views\Account\_EmailContent.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -756,6 +760,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
