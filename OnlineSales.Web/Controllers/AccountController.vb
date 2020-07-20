@@ -170,6 +170,21 @@ Namespace Controllers
             Return RedirectToAction("Index")
         End Function
 
+        ''' <summary>
+        ''' customer
+        ''' </summary>
+        ''' <param name="couponCode"></param>
+        ''' <returns></returns>
+        <HttpPost>
+        Public Function ApplyCoupon(ByVal couponCode As String) As ActionResult
+            Try
+                Dim result = _accountService.IsCouponValid(couponCode)
+                Return Json(New With {Key .Message = result.Message, Key .Success = result.Status})
+            Catch __unusedException1__ As Exception
+                Return Json(New With {Key .Message = "Sorry, An error occurred!", Key .Success = False})
+            End Try
+        End Function
+
 #End Region
     End Class
 

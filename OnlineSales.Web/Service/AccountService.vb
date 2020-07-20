@@ -6,12 +6,15 @@ Public Class AccountService
 #Region "Properties"
     Private Property _ourCustomerRepository As OurCustomerRepository
     Private Property _loginRepository As LoginRepository
+    Private Property _couponRepository As CouponRepository
+
 #End Region
 
 #Region "Constructor"
     Public Sub New()
         _ourCustomerRepository = New OurCustomerRepository()
         _loginRepository = New LoginRepository()
+        _couponRepository = New CouponRepository()
     End Sub
 #End Region
 
@@ -75,27 +78,25 @@ Public Class AccountService
     End Function
 
     ''' <summary>
-    ''' authenticate user
+    ''' apply coupon
     ''' </summary>
-    ''' <param name="loginViewModel"></param>
+    ''' <param name="couponCode"></param>
     ''' <returns></returns>
-    Public Function Authenticate(ByVal loginViewModel As LoginViewModel) As ResponseViewModel Implements IAccount.Authenticate
+    Public Function IsCouponValid(ByVal couponCode As String) As ResponseViewModel Implements IAccount.IsCouponValid
         Dim responseViewModel As ResponseViewModel = New ResponseViewModel
         ' get login info by username
-        Dim login = _loginRepository.GetByEmail(loginViewModel.Username)
+        Dim coupon = _couponRepository.GetByCode(couponCode)
         ' check username is exist or not
-        If (login Is Nothing) Then
+        If (coupon Is Nothing) Then
             responseViewModel.Status = False
-            responseViewModel.Message = "Incorrect Username or Email"
+            responseViewModel.Message = "Coupon is invalid."
         Else
-            ' check password is match or not
-            Dim encryptPassword = Encryption.Encrypt(loginViewModel.Password)
-            If login.Password = encryptPassword Then
-                responseViewModel.Status = True
-                responseViewModel.Message = "Successfully Login"
-            Else
+            If coupon.ExpirationDate.Date <= DateTime.Now.Date Then
                 responseViewModel.Status = False
-                responseViewModel.Message = "Incorrect Password"
+                responseViewModel.Message = "Coupon is expired."
+            Else
+                responseViewModel.Status = True
+                responseViewModel.Message = "Coupon is successfully applied."
             End If
         End If
         Return responseViewModel
@@ -131,6 +132,34 @@ Public Class AccountService
     Public Function GetOurCustomerByEmail(ByVal email As String) As OurCustomer Implements IAccount.GetOurCustomerByEmail
         Return _ourCustomerRepository.GetbyEmailAddress(email)
     End Function
+
+    ''' <summary>
+    ''' authenticate user
+    ''' </summary>
+    ''' <param name="loginViewModel"></param>
+    ''' <returns></returns>
+    Public Function Authenticate(ByVal loginViewModel As LoginViewModel) As ResponseViewModel Implements IAccount.Authenticate
+        Dim responseViewModel As ResponseViewModel = New ResponseViewModel
+        ' get login info by username
+        Dim login = _loginRepository.GetByEmail(loginViewModel.Username)
+        ' check username is exist or not
+        If (login Is Nothing) Then
+            responseViewModel.Status = False
+            responseViewModel.Message = "Incorrect Username or Email"
+        Else
+            ' check password is match or not
+            Dim encryptPassword = Encryption.Encrypt(loginViewModel.Password)
+            If login.Password = encryptPassword Then
+                responseViewModel.Status = True
+                responseViewModel.Message = "Successfully Login"
+            Else
+                responseViewModel.Status = False
+                responseViewModel.Message = "Incorrect Password"
+            End If
+        End If
+        Return responseViewModel
+    End Function
+
 #End Region
 
 End Class

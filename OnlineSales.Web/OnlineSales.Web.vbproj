@@ -635,6 +635,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Controllers\HomeController.vb" />
+    <Compile Include="Repositories\CouponRepository.vb" />
     <Compile Include="Repositories\GenericRepository.vb" />
     <Compile Include="Repositories\Interface\IOurCustomerRepository.vb" />
     <Compile Include="Repositories\Interface\IRepository.vb" />
