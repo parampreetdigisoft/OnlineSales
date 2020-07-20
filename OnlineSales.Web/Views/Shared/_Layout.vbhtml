@@ -40,19 +40,28 @@
     function ErrorMessage(message) {
         var title = "Failed!";
         toastr.error(message, title, {
-            "timeOut": "4000",
+            "timeOut": "6000",
             "extendedTImeout": "0"
         });
     }
     function InfoMessage(message) {
         var title = "INFO!";
-        toastr.info(message, title);
+        toastr.info(message, title, {
+            "timeOut": "6000",
+            "extendedTImeout": "0"
+        });
     }
     function WarningMessage(message) {
-        toastr.warning(message);
+        toastr.warning(message,"",{
+            "timeOut": "6000",
+            "extendedTImeout": "0"
+        });
     }
     function SuccessMessage(message) {
-        toastr.success(message);
+        toastr.success(message, "", {
+            "timeOut": "6000",
+            "extendedTImeout": "0"
+        });
     }
     function ErrorMessageContent() {
         return "Sorry, An error occured. Please try again."
