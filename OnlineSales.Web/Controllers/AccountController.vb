@@ -94,7 +94,7 @@ Namespace Controllers
                     emailContentViewModel.UserMailLink = "mailto:info@NiftyCart.com"
                     emailContentViewModel.Url = url
                     emailContentViewModel.StoreName = signupViewModel.StoreName
-                    emailContentViewModel.Logo = "~/Images/nifty-logo.png"
+                    emailContentViewModel.Logo = WebUrl + "Images/nifty-logo.png"
                     Dim html = PartialView("~/Views/Account/_EmailContent.vbhtml", emailContentViewModel).RenderToString()
                     Utils.SendEmail(signupViewModel.Email, html, "Password Veification Link")
                     Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})
@@ -145,7 +145,7 @@ Namespace Controllers
                 emailContentViewModel.UserMailLink = "mailto:info@NiftyCart.com"
                 emailContentViewModel.Url = Url
                 emailContentViewModel.StoreName = String.Empty
-                emailContentViewModel.Logo = "~/Images/nifty-logo.png"
+                emailContentViewModel.Logo = WebUrl + "Images/nifty-logo.png"
                 Dim html = PartialView("~/Views/Account/_EmailContent.vbhtml", emailContentViewModel).RenderToString()
                 Utils.SendEmail(email, html, "Reset Password Link")
                 Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})

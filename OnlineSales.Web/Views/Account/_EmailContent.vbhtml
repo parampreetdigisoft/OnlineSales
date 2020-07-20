@@ -360,12 +360,13 @@
             .webversion {
                 width: 280px !important;
             }
+            
 
             div.header,
             .layout,
             .one-col .column {
-                max-width: 600px !important;
-                width: 600px !important;
+                max-width: 700px !important;
+                width: 700px !important;
             }
 
             .fixed-width.has-border,
@@ -739,15 +740,17 @@
                     </div>
                     <div>
                         <div class="layout one-col fixed-width stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-                            <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #0c9347;">
+                            <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #2ecc71;">
                                 <div class="column" style="text-align: left;color: #000;font-size: 16px;line-height: 24px;font-family: Verdana,sans-serif;">
                                     <div style="Margin-left: 20px;Margin-right: 20px;">
-                                        <div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+                                        <div style="mso-line-height-rule: exactly;line-height: 30px;font-size: 1px;">&nbsp;</div>
                                     </div>
                                     <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
                                         <img style="border: 0;display: block;height: auto;width: 100%;max-width: 228px;" alt="" width="228" src="@Model.Logo" />
                                     </div>
-                                    <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+                                    <div style="        Margin-left: 20px;
+        Margin-right: 20px;
+        Margin-top: 30px;">
                                         <div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
                                     </div>
                                     <div style="Margin-left: 20px;Margin-right: 20px;">
@@ -757,11 +760,15 @@
                             </div>
                         </div>
                         <div class="layout one-col fixed-width stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-                            <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #ffffff;">
+                            <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #ffffff;border: 1px solid #d7d7d7;">
                                 <div class="column" style="text-align: left;color: #000;font-size: 16px;line-height: 24px;font-family: Verdana,sans-serif;">
                                     <div style="Margin-left: 20px;Margin-right: 20px;">
                                         <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-                                            <p style="Margin-top: 0;Margin-bottom: 0;">&nbsp;</p><p style="Margin-top: 20px;Margin-bottom: 0;"><span style="color:#7a7a7a"><strong>Hello @Model.StoreName,</strong></span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Welcome to the NiftyCart Tribe. We're here to assist you in getting the most out of your store.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Please confirm your email address by&nbsp;</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #b86728;" href="@Model.Url"><span style="color:#0015a1">clicking here</span></a><span style="color:#0015a1">.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Please don't hesitate to contact us if we can be of assistance in any way.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Email -<strong>&nbsp;</strong></span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #b86728;" href="mailto:@Model.UserMailLink"><strong><span style="color:#1104c4">info@NiftyCart.com</span></strong><span style="color:#7a7a7a">&nbsp;</span></a><span style="color:#7a7a7a">or by phone&nbsp;<strong>800-211-4931</strong>&nbsp;in the US or&nbsp;<strong>808-870-8741</strong>&nbsp;elsewhere.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13">
+                                            <p style="Margin-top: 0;Margin-bottom: 0;">&nbsp;</p><p style="Margin-top: 20px;Margin-bottom: 0;"><span style="color:#7a7a7a"><strong>Hello @Model.StoreName,</strong></span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Welcome to the NiftyCart Tribe. We're here to assist you in getting the most out of your store.</span></p><p class="size-13" style="        Margin-top: 20px;
+        Margin-bottom: 0;
+        font-size: 13px;
+        line-height: 21px;
+" lang="x-size-13"><span style="color:#7a7a7a">Please confirm your email address by&nbsp;</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #b86728;" href="@Model.Url"><span style="color:#0015a1">clicking here</span></a><span style="color:#0015a1">.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Please don't hesitate to contact us if we can be of assistance in any way.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13"><span style="color:#7a7a7a">Email -<strong>&nbsp;</strong></span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #b86728;" href="mailto:@Model.UserMailLink"><strong><span style="color:#1104c4">info@NiftyCart.com</span></strong><span style="color:#7a7a7a">&nbsp;</span></a><span style="color:#7a7a7a">or by phone&nbsp;<strong>800-211-4931</strong>&nbsp;in the US or&nbsp;<strong>808-870-8741</strong>&nbsp;elsewhere.</span></p><p class="size-13" style="Margin-top: 20px;Margin-bottom: 0;font-size: 13px;line-height: 21px;" lang="x-size-13">
                                                 <span style="color:#7a7a7a">
                                                     Regards,<br />
                                                     <br />
