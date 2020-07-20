@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Nifty Cart</title>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/Captcha/jquery.captcha.basic.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="~/Content/style.css" />
     <link rel="stylesheet" href="~/Content/responsive.css" />
     <link href="~/Content/toastr.min.css" rel="stylesheet" />
-    <script src="~/Scripts/toastr.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -41,6 +40,10 @@
         Loading...
     </div>
 
+   
+    <script src="~/Scripts/Captcha/jquery.captcha.basic.min.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 <script type="text/javascript">
@@ -59,7 +62,7 @@
         });
     }
     function WarningMessage(message) {
-        toastr.warning(message,"",{
+        toastr.warning(message, "", {
             "timeOut": "6000",
             "extendedTImeout": "0"
         });

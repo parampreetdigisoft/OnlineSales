@@ -719,6 +719,7 @@
       <DependentUpon>OnlineSalesModel.edmx</DependentUpon>
       <LastGenOutput>OnlineSalesModel.vb</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\Captcha\jquery.captcha.basic.js" />
     <Content Include="Scripts\Captcha\jquery.captcha.basic.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
