@@ -5,6 +5,7 @@ Public Class Utils
 
     Public Shared Property SystemEmail As String
     Public Shared Property SystemPassword As String
+    Public Shared Property Account As String
     Public Shared Property Port As String
     Public Shared Property Host As String
 
@@ -18,7 +19,7 @@ Public Class Utils
     Public Shared Sub SendEmail(ByVal emailTo As String, ByVal body As String, ByVal subject As String, ByVal Optional cc As String = Nothing)
         Using client As SmtpClient = New SmtpClient()
             Dim credential As NetworkCredential = New NetworkCredential With {
-                .UserName = SystemEmail,
+                .UserName = Account,
                 .Password = SystemPassword
             }
             client.UseDefaultCredentials = false

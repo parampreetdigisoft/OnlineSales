@@ -14,6 +14,7 @@ Public Class Startup
         ' set value from web.congig
         Utils.SystemEmail = ConfigurationManager.AppSettings("SystemEmail")
         Utils.SystemPassword = ConfigurationManager.AppSettings("SystemPassword")
+        Utils.Account = ConfigurationManager.AppSettings("SMTP_Account")
         Utils.Port = ConfigurationManager.AppSettings("Port")
         Utils.Host = ConfigurationManager.AppSettings("Host")
     End Sub
