@@ -10,18 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class PaypalIntegration
+    Public Property PaypalIntegrationId As Integer
+    Public Property UserId As Integer
+    Public Property ClientId As String
+    Public Property ClientSecret As String
+    Public Property Currency As String
+    Public Property Environment As String
+    Public Property Amount As Nullable(Of Decimal)
+    Public Property Active As Boolean
 
-    Partial Public Class PaypalIntegration
-        Public Property PaypalIntegrationId As Integer
-        Public Property UserId As Integer
-        Public Property ClientId As String
-        Public Property ClientSecret As String
-        Public Property Currency As String
-        Public Property Environment As String
-        Public Property Amount As Nullable(Of Decimal)
-        Public Property Active As Boolean
-    
-    End Class
-
-End Namespace
+End Class

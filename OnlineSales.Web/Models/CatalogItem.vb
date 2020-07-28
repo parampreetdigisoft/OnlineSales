@@ -10,61 +10,57 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CatalogItem
+    Public Property CatalogItemId As Integer
+    Public Property UniqueId As String
+    Public Property UserId As Integer
+    Public Property CatalogLevel3Id As Nullable(Of Integer)
+    Public Property Sequence As Short
+    Public Property Name As String
+    Public Property Description As String
+    Public Property LongDescription As String
+    Public Property Price As Nullable(Of Decimal)
+    Public Property Active As Boolean
+    Public Property Taxable As Boolean
+    Public Property ItemOptionGroupId As Nullable(Of Integer)
+    Public Property UpsellItemGroupId As Nullable(Of Integer)
+    Public Property ItemGroupId As Nullable(Of Integer)
+    Public Property Sku As String
+    Public Property DiscountSchedule As String
+    Public Property ImageThumb As String
+    Public Property ImageLink As String
+    Public Property AdditionalInfoLink As String
+    Public Property Weight As Integer
+    Public Property PackageType As String
+    Public Property PackageIndividually As Nullable(Of Boolean)
+    Public Property Length As Integer
+    Public Property Width As Integer
+    Public Property Height As Integer
+    Public Property Oversize As Byte
+    Public Property InsuredValue As Decimal
+    Public Property ShippingCost As Decimal
+    Public Property MailListId As String
+    Public Property EmailListName As String
+    Public Property DeliveryCharge As Decimal
+    Public Property Option1 As String
+    Public Property Option2 As String
+    Public Property QbItemId As String
+    Public Property ReceiptMessage As String
+    Public Property LandingPixel As String
+    Public Property PurchasePixel As String
+    Public Property NoShipping As Boolean
+    Public Property DigitalFileName As String
+    Public Property DigitalProduct As Boolean
+    Public Property Hidden As Boolean
+    Public Property UpsellPage As String
+    Public Property UniqueItem As Boolean
+    Public Property FeaturedItem As Boolean
+    Public Property ItemOptionList1 As String
+    Public Property ItemOptionList2 As String
+    Public Property ItemOptionList3 As String
+    Public Property FavoriteItem As Boolean
 
-    Partial Public Class CatalogItem
-        Public Property CatalogItemId As Integer
-        Public Property UniqueId As String
-        Public Property UserId As Integer
-        Public Property CatalogLevel3Id As Nullable(Of Integer)
-        Public Property Sequence As Short
-        Public Property Name As String
-        Public Property Description As String
-        Public Property LongDescription As String
-        Public Property Price As Nullable(Of Decimal)
-        Public Property Active As Boolean
-        Public Property Taxable As Boolean
-        Public Property ItemOptionGroupId As Nullable(Of Integer)
-        Public Property UpsellItemGroupId As Nullable(Of Integer)
-        Public Property ItemGroupId As Nullable(Of Integer)
-        Public Property Sku As String
-        Public Property DiscountSchedule As String
-        Public Property ImageThumb As String
-        Public Property ImageLink As String
-        Public Property AdditionalInfoLink As String
-        Public Property Weight As Integer
-        Public Property PackageType As String
-        Public Property PackageIndividually As Nullable(Of Boolean)
-        Public Property Length As Integer
-        Public Property Width As Integer
-        Public Property Height As Integer
-        Public Property Oversize As Byte
-        Public Property InsuredValue As Decimal
-        Public Property ShippingCost As Decimal
-        Public Property MailListId As String
-        Public Property EmailListName As String
-        Public Property DeliveryCharge As Decimal
-        Public Property Option1 As String
-        Public Property Option2 As String
-        Public Property QbItemId As String
-        Public Property ReceiptMessage As String
-        Public Property LandingPixel As String
-        Public Property PurchasePixel As String
-        Public Property NoShipping As Boolean
-        Public Property DigitalFileName As String
-        Public Property DigitalProduct As Boolean
-        Public Property Hidden As Boolean
-        Public Property UpsellPage As String
-        Public Property UniqueItem As Boolean
-        Public Property FeaturedItem As Boolean
-        Public Property ItemOptionList1 As String
-        Public Property ItemOptionList2 As String
-        Public Property ItemOptionList3 As String
-        Public Property FavoriteItem As Boolean
-    
-        Public Overridable Property CatalogImages As ICollection(Of CatalogImage) = New HashSet(Of CatalogImage)
-        Public Overridable Property OrderDetails As ICollection(Of OrderDetail) = New HashSet(Of OrderDetail)
-    
-    End Class
+    Public Overridable Property CatalogImages As ICollection(Of CatalogImage) = New HashSet(Of CatalogImage)
+    Public Overridable Property OrderDetails As ICollection(Of OrderDetail) = New HashSet(Of OrderDetail)
 
-End Namespace
+End Class

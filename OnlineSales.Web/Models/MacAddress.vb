@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class MacAddress
+    Public Property id As Integer
+    Public Property MacAddress1 As String
 
-    Partial Public Class MacAddress
-        Public Property id As Integer
-        Public Property MacAddress1 As String
-    
-    End Class
-
-End Namespace
+End Class

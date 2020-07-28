@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class VisitorAction
+    Public Property VisitorActionsId As Short
+    Public Property ActionDescriptions As String
 
-    Partial Public Class VisitorAction
-        Public Property VisitorActionsId As Short
-        Public Property ActionDescriptions As String
-    
-        Public Overridable Property VisitorTrackings As ICollection(Of VisitorTracking) = New HashSet(Of VisitorTracking)
-    
-    End Class
+    Public Overridable Property VisitorTrackings As ICollection(Of VisitorTracking) = New HashSet(Of VisitorTracking)
 
-End Namespace
+End Class

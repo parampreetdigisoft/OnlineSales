@@ -10,15 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Visitor
+    Public Property VisitorId As Long
+    Public Property FirstVisit As Date
+    Public Property UserId As Nullable(Of Long)
 
-    Partial Public Class Visitor
-        Public Property VisitorId As Long
-        Public Property FirstVisit As Date
-        Public Property UserId As Nullable(Of Long)
-    
-        Public Overridable Property VisitorTrackings As ICollection(Of VisitorTracking) = New HashSet(Of VisitorTracking)
-    
-    End Class
+    Public Overridable Property VisitorTrackings As ICollection(Of VisitorTracking) = New HashSet(Of VisitorTracking)
 
-End Namespace
+End Class

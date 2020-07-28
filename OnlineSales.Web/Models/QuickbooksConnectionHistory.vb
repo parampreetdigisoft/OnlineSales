@@ -10,23 +10,19 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class QuickbooksConnectionHistory
+    Public Property QuickbookConnectionHistoryId As Integer
+    Public Property QuickBookCustomerId As Integer
+    Public Property AccessToken As String
+    Public Property IdentityToken As String
+    Public Property AccessTokenExpiresIn As Nullable(Of Long)
+    Public Property RealmId As String
+    Public Property Active As Boolean
+    Public Property RefreshToken As String
+    Public Property RefreshTokenExpiresIn As Nullable(Of Long)
+    Public Property TokenType As String
+    Public Property StartTime As Nullable(Of Date)
+    Public Property EndTime As Nullable(Of Date)
+    Public Property UserId As Integer
 
-    Partial Public Class QuickbooksConnectionHistory
-        Public Property QuickbookConnectionHistoryId As Integer
-        Public Property QuickBookCustomerId As Integer
-        Public Property AccessToken As String
-        Public Property IdentityToken As String
-        Public Property AccessTokenExpiresIn As Nullable(Of Long)
-        Public Property RealmId As String
-        Public Property Active As Boolean
-        Public Property RefreshToken As String
-        Public Property RefreshTokenExpiresIn As Nullable(Of Long)
-        Public Property TokenType As String
-        Public Property StartTime As Nullable(Of Date)
-        Public Property EndTime As Nullable(Of Date)
-        Public Property UserId As Integer
-    
-    End Class
-
-End Namespace
+End Class

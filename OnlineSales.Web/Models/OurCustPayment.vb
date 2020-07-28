@@ -10,21 +10,17 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class OurCustPayment
+    Public Property OurCustPaymentId As Integer
+    Public Property UserId As Integer
+    Public Property SubscriptionId As String
+    Public Property SubscriptionDate As Date
+    Public Property OurPlanId As String
+    Public Property Period As String
+    Public Property PlanId As String
+    Public Property Amount As Decimal
+    Public Property Active As Boolean
 
-    Partial Public Class OurCustPayment
-        Public Property OurCustPaymentId As Integer
-        Public Property UserId As Integer
-        Public Property SubscriptionId As String
-        Public Property SubscriptionDate As Date
-        Public Property OurPlanId As String
-        Public Property Period As String
-        Public Property PlanId As String
-        Public Property Amount As Decimal
-        Public Property Active As Boolean
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

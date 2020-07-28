@@ -10,17 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class OrderSubOption
+    Public Property OrderSubOptionId As Integer
+    Public Property OrderOptionId As Integer
+    Public Property SubOptionId As Integer
+    Public Property Price As Decimal
 
-    Partial Public Class OrderSubOption
-        Public Property OrderSubOptionId As Integer
-        Public Property OrderOptionId As Integer
-        Public Property SubOptionId As Integer
-        Public Property Price As Decimal
-    
-        Public Overridable Property ItemSubOption As ItemSubOption
-        Public Overridable Property OrderDetailOption As OrderDetailOption
-    
-    End Class
+    Public Overridable Property ItemSubOption As ItemSubOption
+    Public Overridable Property OrderDetailOption As OrderDetailOption
 
-End Namespace
+End Class

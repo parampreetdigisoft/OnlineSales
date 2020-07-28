@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class License
+    Public Property ReceiptNo As Integer
+    Public Property LicenseNo As Integer
 
-    Partial Public Class License
-        Public Property ReceiptNo As Integer
-        Public Property LicenseNo As Integer
-    
-    End Class
-
-End Namespace
+End Class

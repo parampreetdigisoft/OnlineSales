@@ -10,17 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class SplitTestLink
+    Public Property SplitTestLinkId As Integer
+    Public Property SplitTestId As Integer
+    Public Property TestURL As String
+    Public Property PercentageRun As Short
 
-    Partial Public Class SplitTestLink
-        Public Property SplitTestLinkId As Integer
-        Public Property SplitTestId As Integer
-        Public Property TestURL As String
-        Public Property PercentageRun As Short
-    
-        Public Overridable Property SplitTest As SplitTest
-        Public Overridable Property SplitTestCaptures As ICollection(Of SplitTestCapture) = New HashSet(Of SplitTestCapture)
-    
-    End Class
+    Public Overridable Property SplitTest As SplitTest
+    Public Overridable Property SplitTestCaptures As ICollection(Of SplitTestCapture) = New HashSet(Of SplitTestCapture)
 
-End Namespace
+End Class

@@ -10,33 +10,29 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryNewCartSetup
+    Public Property UserId As Integer
+    Public Property CustomerName As String
+    Public Property ServiceLevel As Byte
+    Public Property Active As Nullable(Of Boolean)
+    Public Property bTestMode As Boolean
+    Public Property TimeZone As Nullable(Of Short)
+    Public Property ThankYouPage As String
+    Public Property ListBySequence As Boolean
+    Public Property Metric As Boolean
+    Public Property MultiLevelCatalog As Boolean
+    Public Property ShippingAdditionalItem As Nullable(Of Decimal)
+    Public Property ShippingFirstItem As Nullable(Of Decimal)
+    Public Property ShippingFreeOver As Nullable(Of Decimal)
+    Public Property UseEzShip As Boolean
+    Public Property CartFormat As Byte
+    Public Property ChatCode As String
+    Public Property TaxStateId As Nullable(Of Integer)
+    Public Property TaxCountry As String
+    Public Property TaxState As String
+    Public Property TaxPercentage As Nullable(Of Decimal)
+    Public Property TaxPercentage2 As Nullable(Of Decimal)
+    Public Property Logo As String
+    Public Property Coupons As Boolean
 
-    Partial Public Class qryNewCartSetup
-        Public Property UserId As Integer
-        Public Property CustomerName As String
-        Public Property ServiceLevel As Byte
-        Public Property Active As Nullable(Of Boolean)
-        Public Property bTestMode As Boolean
-        Public Property TimeZone As Nullable(Of Short)
-        Public Property ThankYouPage As String
-        Public Property ListBySequence As Boolean
-        Public Property Metric As Boolean
-        Public Property MultiLevelCatalog As Boolean
-        Public Property ShippingAdditionalItem As Nullable(Of Decimal)
-        Public Property ShippingFirstItem As Nullable(Of Decimal)
-        Public Property ShippingFreeOver As Nullable(Of Decimal)
-        Public Property UseEzShip As Boolean
-        Public Property CartFormat As Byte
-        Public Property ChatCode As String
-        Public Property TaxStateId As Nullable(Of Integer)
-        Public Property TaxCountry As String
-        Public Property TaxState As String
-        Public Property TaxPercentage As Nullable(Of Decimal)
-        Public Property TaxPercentage2 As Nullable(Of Decimal)
-        Public Property Logo As String
-        Public Property Coupons As Boolean
-    
-    End Class
-
-End Namespace
+End Class

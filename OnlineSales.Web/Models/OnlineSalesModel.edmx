@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OnlineSales2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OnlineSales2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="_login">
           <Key>
             <PropertyRef Name="LoginId" />
@@ -20,6 +20,7 @@
           <Property Name="Active" Type="bit" Nullable="false" />
           <Property Name="Random" Type="varchar" MaxLength="50" />
           <Property Name="Signup" Type="smalldatetime" Nullable="false" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Affiliate">
           <Key>
@@ -254,6 +255,10 @@
           <Property Name="RotationTimeFrame" Type="int" />
           <Property Name="TrustLogo" Type="nvarchar(max)" />
           <Property Name="HeaderImage" Type="nvarchar(max)" />
+          <Property Name="FAQpage" Type="nvarchar(max)" />
+          <Property Name="AboutUsPage" Type="nvarchar(max)" />
+          <Property Name="TermsConditionsPage" Type="nvarchar(max)" />
+          <Property Name="ContactUsPage" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="CatalogImages">
           <Key>
@@ -2404,56 +2409,6 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryOrderDetailOptionTotal' does n
           <Property Name="OptionPrice" Type="money" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'OnlineSales2.dbo.qryOrderDetailWithOptions' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="qryOrderDetailWithOptions">
-          <Property Name="OrderId" Type="int" />
-          <Property Name="OrderDetailId" Type="int" />
-          <Property Name="Quantity" Type="decimal" Precision="5" Scale="2" />
-          <Property Name="Price" Type="money" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="500" />
-          <Property Name="SpecialInstructions" Type="nvarchar" MaxLength="250" />
-          <Property Name="CatalogItemId" Type="int" />
-          <Property Name="DiscountPercent" Type="tinyint" />
-          <Property Name="Option1" Type="nvarchar" MaxLength="50" />
-          <Property Name="Option2" Type="nvarchar" MaxLength="50" />
-          <Property Name="Taxable" Type="bit" />
-          <Property Name="Weight" Type="int" />
-          <Property Name="ShippingCost" Type="money" />
-          <Property Name="ShippingFirstItem" Type="smallmoney" />
-          <Property Name="ShippingAdditionalItem" Type="smallmoney" />
-          <Property Name="ShippingFreeOver" Type="smallmoney" />
-          <Property Name="UseEzShip" Type="bit" />
-          <Property Name="URLContinue" Type="nvarchar" MaxLength="500" />
-          <Property Name="ItemOptionId" Type="int" />
-          <Property Name="OptionPrice" Type="smallmoney" />
-          <Property Name="OptionDescription" Type="nvarchar" MaxLength="50" />
-          <Property Name="OptionGroupName" Type="nvarchar" MaxLength="20" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="DigitalProduct" Type="bit" />
-          <Property Name="DigitalFileName" Type="nvarchar" MaxLength="100" />
-          <Property Name="TaxState" Type="char" MaxLength="2" />
-          <Property Name="TaxCountry" Type="char" MaxLength="2" />
-          <Property Name="TaxPercentage" Type="smallmoney" />
-          <Property Name="TaxPercentage2" Type="smallmoney" />
-          <Property Name="SalesTaxPercent" Type="decimal" Precision="4" Scale="2" />
-          <Property Name="ServiceLevel" Type="tinyint" />
-          <Property Name="ShippingRegionLabel" Type="nvarchar" MaxLength="50" />
-          <Property Name="ShippingModeLabel" Type="nvarchar" MaxLength="50" />
-          <Property Name="ShippingFreeOverLabel" Type="nvarchar" MaxLength="50" />
-          <Property Name="ShippingField" Type="nvarchar" MaxLength="50" />
-          <Property Name="SalesTaxField" Type="nvarchar" MaxLength="50" />
-          <Property Name="OrderTotalField" Type="nvarchar" MaxLength="50" />
-          <Property Name="CouponCodeField" Type="nvarchar" MaxLength="50" />
-          <Property Name="ValidateButton" Type="nvarchar" MaxLength="50" />
-          <Property Name="CheckOutButton" Type="nvarchar" MaxLength="50" />
-          <Property Name="ItemTotalField" Type="nvarchar" MaxLength="50" />
-          <Property Name="DiscountField" Type="nvarchar" MaxLength="50" />
-          <Property Name="Currency" Type="char" MaxLength="5" />
-          <Property Name="CurrencySymbol" Type="char" MaxLength="4" />
-          <Property Name="PaypalSignature" Type="nvarchar(max)" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'OnlineSales2.dbo.qryOrderDetailWithOptionsOLD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="qryOrderDetailWithOptionsOLD">
           <Key>
@@ -3417,6 +3372,7 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
           <Parameter Name="pPayPalSignature" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="pMailAPIKey" Type="nvarchar" Mode="In" />
           <Parameter Name="pReceiptFooter" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pFeaturedItems" Type="bit" Mode="In" />
         </Function>
         <Function Name="uspUpdateSetup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pUserId" Type="int" Mode="In" />
@@ -3432,6 +3388,7 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
           <Parameter Name="pCurrency" Type="char" Mode="In" />
           <Parameter Name="pCurrencySymbol" Type="char" Mode="In" />
           <Parameter Name="pThankYouPage" Type="nvarchar" Mode="In" />
+          <Parameter Name="pHeaderImage" Type="nvarchar(max)" Mode="In" />
         </Function>
         <EntityContainer Name="OnlineSales2ModelStoreContainer">
           <EntitySet Name="_login" EntityType="Self._login" Schema="dbo" store:Type="Tables" />
@@ -4568,8 +4525,7 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
             <End Role="VisitorTracking1" EntitySet="VisitorTracking" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OnlineSales2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -4592,6 +4548,7 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
           <NavigationProperty Name="OurAffiliate" Relationship="Self.FK_OurAffiliate__login" FromRole="C_login" ToRole="OurAffiliate" />
           <NavigationProperty Name="OurCustomers" Relationship="Self.Login_OurCustomer" FromRole="C_login" ToRole="OurCustomer" />
           <NavigationProperty Name="OurCustomers1" Relationship="Self.LoginUser" FromRole="C_login" ToRole="OurCustomer" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Affiliate">
           <Key>
@@ -4834,6 +4791,10 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
           <Property Name="TrustLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HeaderImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="OurCustomer" Relationship="Self.FK_CartSetup_OurCustomer" FromRole="CartSetup" ToRole="OurCustomer" />
+          <Property Name="FAQpage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutUsPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TermsConditionsPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactUsPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CatalogImage">
           <Key>
@@ -7851,6 +7812,7 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
           <EntitySetMapping Name="C_login">
             <EntityTypeMapping TypeName="OnlineSales2Model.C_login">
               <MappingFragment StoreEntitySet="_login">
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
                 <ScalarProperty Name="LoginId" ColumnName="LoginId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Master" ColumnName="Master" />
@@ -8016,6 +7978,10 @@ warning 6002: The table/view 'OnlineSales2.dbo.qryTaxStatew/Name' does not have 
           <EntitySetMapping Name="CartSetups">
             <EntityTypeMapping TypeName="OnlineSales2Model.CartSetup">
               <MappingFragment StoreEntitySet="CartSetup">
+                <ScalarProperty Name="ContactUsPage" ColumnName="ContactUsPage" />
+                <ScalarProperty Name="TermsConditionsPage" ColumnName="TermsConditionsPage" />
+                <ScalarProperty Name="AboutUsPage" ColumnName="AboutUsPage" />
+                <ScalarProperty Name="FAQpage" ColumnName="FAQpage" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="alertphone" ColumnName="alertphone" />
                 <ScalarProperty Name="SendText" ColumnName="SendText" />

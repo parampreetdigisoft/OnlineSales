@@ -10,35 +10,31 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryOrderDetail
+    Public Property OrderId As Integer
+    Public Property UserId As Integer
+    Public Property OrderDetailId As Integer
+    Public Property Quantity As Decimal
+    Public Property Price As Decimal
+    Public Property Name As String
+    Public Property Description As String
+    Public Property SpecialInstructions As String
+    Public Property CatalogItemId As Integer
+    Public Property DiscountPercent As Byte
+    Public Property Option1 As String
+    Public Property Option2 As String
+    Public Property Taxable As Boolean
+    Public Property Weight As Integer
+    Public Property ShippingCost As Decimal
+    Public Property SalesTaxPercent As Decimal
+    Public Property ShippingFirstItem As Nullable(Of Decimal)
+    Public Property ShippingAdditionalItem As Nullable(Of Decimal)
+    Public Property ShippingFreeOver As Nullable(Of Decimal)
+    Public Property UseEzShip As Boolean
+    Public Property URLContinue As String
+    Public Property DigitalProduct As Boolean
+    Public Property DigitalFileName As String
+    Public Property MailListId As String
+    Public Property EmailListId As String
 
-    Partial Public Class qryOrderDetail
-        Public Property OrderId As Integer
-        Public Property UserId As Integer
-        Public Property OrderDetailId As Integer
-        Public Property Quantity As Decimal
-        Public Property Price As Decimal
-        Public Property Name As String
-        Public Property Description As String
-        Public Property SpecialInstructions As String
-        Public Property CatalogItemId As Integer
-        Public Property DiscountPercent As Byte
-        Public Property Option1 As String
-        Public Property Option2 As String
-        Public Property Taxable As Boolean
-        Public Property Weight As Integer
-        Public Property ShippingCost As Decimal
-        Public Property SalesTaxPercent As Decimal
-        Public Property ShippingFirstItem As Nullable(Of Decimal)
-        Public Property ShippingAdditionalItem As Nullable(Of Decimal)
-        Public Property ShippingFreeOver As Nullable(Of Decimal)
-        Public Property UseEzShip As Boolean
-        Public Property URLContinue As String
-        Public Property DigitalProduct As Boolean
-        Public Property DigitalFileName As String
-        Public Property MailListId As String
-        Public Property EmailListId As String
-    
-    End Class
-
-End Namespace
+End Class

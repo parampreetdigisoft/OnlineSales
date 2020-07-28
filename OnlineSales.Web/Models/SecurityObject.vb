@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class SecurityObject
+    Public Property ObjectId As Integer
+    Public Property Name As String
 
-    Partial Public Class SecurityObject
-        Public Property ObjectId As Integer
-        Public Property Name As String
-    
-        Public Overridable Property UserSecurities As ICollection(Of UserSecurity) = New HashSet(Of UserSecurity)
-    
-    End Class
+    Public Overridable Property UserSecurities As ICollection(Of UserSecurity) = New HashSet(Of UserSecurity)
 
-End Namespace
+End Class

@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CatalogLevel1_2s
+    Public Property CatalogLevel1Id As Integer
+    Public Property CatalogLevel2Id As Integer
 
-    Partial Public Class CatalogLevel1_2s
-        Public Property CatalogLevel1Id As Integer
-        Public Property CatalogLevel2Id As Integer
-    
-    End Class
-
-End Namespace
+End Class

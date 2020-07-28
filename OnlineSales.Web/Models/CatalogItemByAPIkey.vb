@@ -10,13 +10,9 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CatalogItemByAPIkey
+    Public Property APIkey As String
+    Public Property ItemId As Integer
+    Public Property Name As String
 
-    Partial Public Class CatalogItemByAPIkey
-        Public Property APIkey As String
-        Public Property ItemId As Integer
-        Public Property Name As String
-    
-    End Class
-
-End Namespace
+End Class

@@ -10,15 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class SplitTest
+    Public Property SplitTestID As Integer
+    Public Property TestName As String
+    Public Property SendToSamePage As Boolean
 
-    Partial Public Class SplitTest
-        Public Property SplitTestID As Integer
-        Public Property TestName As String
-        Public Property SendToSamePage As Boolean
-    
-        Public Overridable Property SplitTestLinks As ICollection(Of SplitTestLink) = New HashSet(Of SplitTestLink)
-    
-    End Class
+    Public Overridable Property SplitTestLinks As ICollection(Of SplitTestLink) = New HashSet(Of SplitTestLink)
 
-End Namespace
+End Class

@@ -10,26 +10,23 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class C_login
+    Public Property LoginId As Integer
+    Public Property UserId As Integer
+    Public Property Master As Boolean
+    Public Property AccessLevel As Short
+    Public Property Login As String
+    Public Property Password As String
+    Public Property Email As String
+    Public Property CellPhone As String
+    Public Property Active As Boolean
+    Public Property Random As String
+    Public Property Signup As Date
+    Public Property IsNew As Boolean
 
-    Partial Public Class C_login
-        Public Property LoginId As Integer
-        Public Property UserId As Integer
-        Public Property Master As Boolean
-        Public Property AccessLevel As Short
-        Public Property Login As String
-        Public Property Password As String
-        Public Property Email As String
-        Public Property CellPhone As String
-        Public Property Active As Boolean
-        Public Property Random As String
-        Public Property Signup As Date
-    
-        Public Overridable Property OurCustomer As OurCustomer
-        Public Overridable Property OurAffiliate As OurAffiliate
-        Public Overridable Property OurCustomers As ICollection(Of OurCustomer) = New HashSet(Of OurCustomer)
-        Public Overridable Property OurCustomers1 As ICollection(Of OurCustomer) = New HashSet(Of OurCustomer)
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
+    Public Overridable Property OurAffiliate As OurAffiliate
+    Public Overridable Property OurCustomers As ICollection(Of OurCustomer) = New HashSet(Of OurCustomer)
+    Public Overridable Property OurCustomers1 As ICollection(Of OurCustomer) = New HashSet(Of OurCustomer)
 
-End Namespace
+End Class

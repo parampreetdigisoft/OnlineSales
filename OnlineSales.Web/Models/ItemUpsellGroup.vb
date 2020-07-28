@@ -10,18 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class ItemUpsellGroup
+    Public Property ItemUpsellGroupId As Integer
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property Sequence As Byte
+    Public Property Description As String
+    Public Property CheckBox As Boolean
+    Public Property ItemUpsellId As Nullable(Of Integer)
+    Public Property UpsellAsGroup As Boolean
 
-    Partial Public Class ItemUpsellGroup
-        Public Property ItemUpsellGroupId As Integer
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property Sequence As Byte
-        Public Property Description As String
-        Public Property CheckBox As Boolean
-        Public Property ItemUpsellId As Nullable(Of Integer)
-        Public Property UpsellAsGroup As Boolean
-    
-    End Class
-
-End Namespace
+End Class

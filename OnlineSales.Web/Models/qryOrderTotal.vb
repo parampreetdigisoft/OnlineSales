@@ -10,18 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryOrderTotal
+    Public Property OrderId As Integer
+    Public Property itemtotal As Nullable(Of Decimal)
+    Public Property OptionTotal As Nullable(Of Decimal)
+    Public Property SalesTax As Decimal
+    Public Property ShippingCharge As Decimal
+    Public Property DiscountAmount As Nullable(Of Decimal)
+    Public Property OptionPrice As Nullable(Of Decimal)
+    Public Property Currency As String
 
-    Partial Public Class qryOrderTotal
-        Public Property OrderId As Integer
-        Public Property itemtotal As Nullable(Of Decimal)
-        Public Property OptionTotal As Nullable(Of Decimal)
-        Public Property SalesTax As Decimal
-        Public Property ShippingCharge As Decimal
-        Public Property DiscountAmount As Nullable(Of Decimal)
-        Public Property OptionPrice As Nullable(Of Decimal)
-        Public Property Currency As String
-    
-    End Class
-
-End Namespace
+End Class

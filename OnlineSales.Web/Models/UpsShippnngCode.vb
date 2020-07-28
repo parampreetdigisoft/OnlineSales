@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class UpsShippnngCode
+    Public Property Id As String
+    Public Property ServiceName As String
 
-    Partial Public Class UpsShippnngCode
-        Public Property Id As String
-        Public Property ServiceName As String
-    
-    End Class
-
-End Namespace
+End Class

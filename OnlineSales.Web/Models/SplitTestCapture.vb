@@ -10,16 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class SplitTestCapture
+    Public Property SplitTestCaptureId As Integer
+    Public Property IP As String
+    Public Property SplitTestLinkId As Integer
+    Public Property Time As Date
 
-    Partial Public Class SplitTestCapture
-        Public Property SplitTestCaptureId As Integer
-        Public Property IP As String
-        Public Property SplitTestLinkId As Integer
-        Public Property Time As Date
-    
-        Public Overridable Property SplitTestLink As SplitTestLink
-    
-    End Class
+    Public Overridable Property SplitTestLink As SplitTestLink
 
-End Namespace
+End Class

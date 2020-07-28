@@ -10,22 +10,18 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class AffiliateLink
+    Public Property AffiliateLinkId As Integer
+    Public Property AffiliateProgramId As Integer
+    Public Property TypeOfLink As Byte
+    Public Property Link As String
+    Public Property LinkText As String
+    Public Property ImageLink As String
+    Public Property Height As Nullable(Of Short)
+    Public Property Width As Nullable(Of Short)
+    Public Property EmailLink As String
+    Public Property EmailSubjectLine As String
 
-    Partial Public Class AffiliateLink
-        Public Property AffiliateLinkId As Integer
-        Public Property AffiliateProgramId As Integer
-        Public Property TypeOfLink As Byte
-        Public Property Link As String
-        Public Property LinkText As String
-        Public Property ImageLink As String
-        Public Property Height As Nullable(Of Short)
-        Public Property Width As Nullable(Of Short)
-        Public Property EmailLink As String
-        Public Property EmailSubjectLine As String
-    
-        Public Overridable Property AffiliateProgram As AffiliateProgram
-    
-    End Class
+    Public Overridable Property AffiliateProgram As AffiliateProgram
 
-End Namespace
+End Class

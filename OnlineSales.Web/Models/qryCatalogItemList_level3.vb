@@ -10,29 +10,25 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryCatalogItemList_level3
+    Public Property UserId As Integer
+    Public Property CategoryId As Nullable(Of Integer)
+    Public Property CategoryName As String
+    Public Property CategorySequence As Nullable(Of Short)
+    Public Property CategoryImage As String
+    Public Property CatalogItemId As Integer
+    Public Property CatalogItemSequence As Short
+    Public Property CatalogItemName As String
+    Public Property CatalogItemDescription As String
+    Public Property Price As Nullable(Of Decimal)
+    Public Property Active As Boolean
+    Public Property Sku As String
+    Public Property ImageThumb As String
+    Public Property ImageLink As String
+    Public Property CartFormat As Byte
+    Public Property FeaturedItem As Boolean
+    Public Property APIkey As String
+    Public Property ImageSequence As Short
+    Public Property FavoriteItem As Boolean
 
-    Partial Public Class qryCatalogItemList_level3
-        Public Property UserId As Integer
-        Public Property CategoryId As Nullable(Of Integer)
-        Public Property CategoryName As String
-        Public Property CategorySequence As Nullable(Of Short)
-        Public Property CategoryImage As String
-        Public Property CatalogItemId As Integer
-        Public Property CatalogItemSequence As Short
-        Public Property CatalogItemName As String
-        Public Property CatalogItemDescription As String
-        Public Property Price As Nullable(Of Decimal)
-        Public Property Active As Boolean
-        Public Property Sku As String
-        Public Property ImageThumb As String
-        Public Property ImageLink As String
-        Public Property CartFormat As Byte
-        Public Property FeaturedItem As Boolean
-        Public Property APIkey As String
-        Public Property ImageSequence As Short
-        Public Property FavoriteItem As Boolean
-    
-    End Class
-
-End Namespace
+End Class

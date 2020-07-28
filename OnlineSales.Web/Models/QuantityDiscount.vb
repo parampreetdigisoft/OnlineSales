@@ -10,18 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class QuantityDiscount
+    Public Property QuantityDiscountId As Integer
+    Public Property UserId As Integer
+    Public Property DiscSchedule As String
+    Public Property Quantity As Integer
+    Public Property discount As Decimal
+    Public Property Percent As Boolean
 
-    Partial Public Class QuantityDiscount
-        Public Property QuantityDiscountId As Integer
-        Public Property UserId As Integer
-        Public Property DiscSchedule As String
-        Public Property Quantity As Integer
-        Public Property discount As Decimal
-        Public Property Percent As Boolean
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

@@ -10,28 +10,24 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class BuildaLink
+    Public Property BuildALinkId As Integer
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property Description As String
+    Public Property Price As Decimal
+    Public Property Quantity As Byte
+    Public Property Weight As Byte
+    Public Property SKU As String
+    Public Property Taxable As Boolean
+    Public Property OrderSource As String
+    Public Property PassThroughCode As String
+    Public Property ContinueShopping As String
+    Public Property UpsellPage As String
+    Public Property ImmediateCheckout As Boolean
+    Public Property MailListId As String
+    Public Property TheLink As String
 
-    Partial Public Class BuildaLink
-        Public Property BuildALinkId As Integer
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property Description As String
-        Public Property Price As Decimal
-        Public Property Quantity As Byte
-        Public Property Weight As Byte
-        Public Property SKU As String
-        Public Property Taxable As Boolean
-        Public Property OrderSource As String
-        Public Property PassThroughCode As String
-        Public Property ContinueShopping As String
-        Public Property UpsellPage As String
-        Public Property ImmediateCheckout As Boolean
-        Public Property MailListId As String
-        Public Property TheLink As String
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

@@ -10,17 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class SingleCoupon
+    Public Property SingleCouponId As Integer
+    Public Property UserId As Integer
+    Public Property Amount As Nullable(Of Decimal)
+    Public Property ExpirationDate As Nullable(Of Date)
+    Public Property Used As Boolean
 
-    Partial Public Class SingleCoupon
-        Public Property SingleCouponId As Integer
-        Public Property UserId As Integer
-        Public Property Amount As Nullable(Of Decimal)
-        Public Property ExpirationDate As Nullable(Of Date)
-        Public Property Used As Boolean
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

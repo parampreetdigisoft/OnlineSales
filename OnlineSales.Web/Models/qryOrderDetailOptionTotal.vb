@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryOrderDetailOptionTotal
+    Public Property OrderDetailId As Integer
+    Public Property OptionPrice As Nullable(Of Decimal)
 
-    Partial Public Class qryOrderDetailOptionTotal
-        Public Property OrderDetailId As Integer
-        Public Property OptionPrice As Nullable(Of Decimal)
-    
-    End Class
-
-End Namespace
+End Class

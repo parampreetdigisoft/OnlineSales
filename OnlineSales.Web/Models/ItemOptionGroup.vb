@@ -10,20 +10,16 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class ItemOptionGroup
+    Public Property ItemOptionGroupId As Integer
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property Sequence As Byte
+    Public Property Description As String
+    Public Property CheckBox As Boolean
+    Public Property Split As Boolean
+    Public Property ItemOptionId As Nullable(Of Integer)
 
-    Partial Public Class ItemOptionGroup
-        Public Property ItemOptionGroupId As Integer
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property Sequence As Byte
-        Public Property Description As String
-        Public Property CheckBox As Boolean
-        Public Property Split As Boolean
-        Public Property ItemOptionId As Nullable(Of Integer)
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

@@ -10,27 +10,23 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryCompleteOrderWithDetail1
+    Public Property OrderId As Integer
+    Public Property UserId As Integer
+    Public Property OrderDate As Date
+    Public Property FirstName As String
+    Public Property LastName As String
+    Public Property OrderTotal As Decimal
+    Public Property SalesTax As Decimal
+    Public Property ShippingCharge As Decimal
+    Public Property SalesTaxAmt As Nullable(Of Decimal)
+    Public Property DiscountAmount As Nullable(Of Decimal)
+    Public Property OrderDetailId As Integer
+    Public Property Quantity As Decimal
+    Public Property Name As String
+    Public Property Price As Nullable(Of Decimal)
+    Public Property Description As String
+    Public Property OptionPrice As Nullable(Of Decimal)
+    Public Property bTestOrder As Nullable(Of Boolean)
 
-    Partial Public Class qryCompleteOrderWithDetail1
-        Public Property OrderId As Integer
-        Public Property UserId As Integer
-        Public Property OrderDate As Date
-        Public Property FirstName As String
-        Public Property LastName As String
-        Public Property OrderTotal As Decimal
-        Public Property SalesTax As Decimal
-        Public Property ShippingCharge As Decimal
-        Public Property SalesTaxAmt As Nullable(Of Decimal)
-        Public Property DiscountAmount As Nullable(Of Decimal)
-        Public Property OrderDetailId As Integer
-        Public Property Quantity As Decimal
-        Public Property Name As String
-        Public Property Price As Nullable(Of Decimal)
-        Public Property Description As String
-        Public Property OptionPrice As Nullable(Of Decimal)
-        Public Property bTestOrder As Nullable(Of Boolean)
-    
-    End Class
-
-End Namespace
+End Class

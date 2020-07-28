@@ -10,21 +10,17 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Session
+    Public Property SessionId As Integer
+    Public Property UserId As Nullable(Of Integer)
+    Public Property Token As String
+    Public Property IsFacebookLogin As Nullable(Of Boolean)
+    Public Property IsGoogleLogin As Nullable(Of Boolean)
+    Public Property IsTwitterLogin As Nullable(Of Boolean)
+    Public Property IsPrintrestLogin As Nullable(Of Boolean)
+    Public Property StartTime As Nullable(Of Date)
+    Public Property EndTime As Nullable(Of Date)
+    Public Property Duration As String
+    Public Property Active As Boolean
 
-    Partial Public Class Session
-        Public Property SessionId As Integer
-        Public Property UserId As Nullable(Of Integer)
-        Public Property Token As String
-        Public Property IsFacebookLogin As Nullable(Of Boolean)
-        Public Property IsGoogleLogin As Nullable(Of Boolean)
-        Public Property IsTwitterLogin As Nullable(Of Boolean)
-        Public Property IsPrintrestLogin As Nullable(Of Boolean)
-        Public Property StartTime As Nullable(Of Date)
-        Public Property EndTime As Nullable(Of Date)
-        Public Property Duration As String
-        Public Property Active As Boolean
-    
-    End Class
-
-End Namespace
+End Class

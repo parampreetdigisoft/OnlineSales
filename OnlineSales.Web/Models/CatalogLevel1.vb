@@ -10,16 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CatalogLevel1
+    Public Property CatalogLevel1Id As Integer
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property Sequence As Byte
 
-    Partial Public Class CatalogLevel1
-        Public Property CatalogLevel1Id As Integer
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property Sequence As Byte
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

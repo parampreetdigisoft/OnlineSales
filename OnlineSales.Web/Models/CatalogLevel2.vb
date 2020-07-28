@@ -10,19 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CatalogLevel2
+    Public Property CategoryLevel2Id As Integer
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property Sequence As Byte
+    Public Property TimeFrom As Short
+    Public Property TimeTo As Short
 
-    Partial Public Class CatalogLevel2
-        Public Property CategoryLevel2Id As Integer
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property Sequence As Byte
-        Public Property TimeFrom As Short
-        Public Property TimeTo As Short
-    
-        Public Overridable Property OurCustomer As OurCustomer
-        Public Overridable Property CatalogLevel3 As ICollection(Of CatalogLevel3) = New HashSet(Of CatalogLevel3)
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
+    Public Overridable Property CatalogLevel3 As ICollection(Of CatalogLevel3) = New HashSet(Of CatalogLevel3)
 
-End Namespace
+End Class

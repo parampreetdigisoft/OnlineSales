@@ -103,6 +103,7 @@ End Code
                     if (data.Success === true) {
                         SuccessMessage("Update Successfully.");
                         setTimeout(function () {
+                            //window.location.href = data.Url;
                             window.location.href = "/Account/Index";
                         }, 2000);
                     }

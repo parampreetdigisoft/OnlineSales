@@ -10,16 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CaptureEmail
+    Public Property CaptureEmailId As Integer
+    Public Property OrderId As Integer
+    Public Property EmailAddress As String
+    Public Property TimeAdded As Byte()
 
-    Partial Public Class CaptureEmail
-        Public Property CaptureEmailId As Integer
-        Public Property OrderId As Integer
-        Public Property EmailAddress As String
-        Public Property TimeAdded As Byte()
-    
-        Public Overridable Property OrderHeader As OrderHeader
-    
-    End Class
+    Public Overridable Property OrderHeader As OrderHeader
 
-End Namespace
+End Class

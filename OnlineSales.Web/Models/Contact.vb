@@ -10,24 +10,20 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Contact
+    Public Property ContactId As Integer
+    Public Property FirstName As String
+    Public Property LastName As String
+    Public Property Address1 As String
+    Public Property Address2 As String
+    Public Property City As String
+    Public Property State As String
+    Public Property Zip As String
+    Public Property Country As String
+    Public Property Phone As String
+    Public Property Phone2 As String
+    Public Property email As String
 
-    Partial Public Class Contact
-        Public Property ContactId As Integer
-        Public Property FirstName As String
-        Public Property LastName As String
-        Public Property Address1 As String
-        Public Property Address2 As String
-        Public Property City As String
-        Public Property State As String
-        Public Property Zip As String
-        Public Property Country As String
-        Public Property Phone As String
-        Public Property Phone2 As String
-        Public Property email As String
-    
-        Public Overridable Property OurCustomers As ICollection(Of OurCustomer) = New HashSet(Of OurCustomer)
-    
-    End Class
+    Public Overridable Property OurCustomers As ICollection(Of OurCustomer) = New HashSet(Of OurCustomer)
 
-End Namespace
+End Class

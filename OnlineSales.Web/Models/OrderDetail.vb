@@ -10,24 +10,20 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class OrderDetail
+    Public Property OrderDetailId As Integer
+    Public Property OrderId As Integer
+    Public Property Quantity As Decimal
+    Public Property CatalogItemId As Integer
+    Public Property Price As Decimal
+    Public Property SpecialInstructions As String
+    Public Property ForWho As String
+    Public Property DiscountPercent As Byte
+    Public Property Option1 As String
+    Public Property Option2 As String
+    Public Property OrderSource As String
 
-    Partial Public Class OrderDetail
-        Public Property OrderDetailId As Integer
-        Public Property OrderId As Integer
-        Public Property Quantity As Decimal
-        Public Property CatalogItemId As Integer
-        Public Property Price As Decimal
-        Public Property SpecialInstructions As String
-        Public Property ForWho As String
-        Public Property DiscountPercent As Byte
-        Public Property Option1 As String
-        Public Property Option2 As String
-        Public Property OrderSource As String
-    
-        Public Overridable Property CatalogItem As CatalogItem
-        Public Overridable Property OrderHeader As OrderHeader
-    
-    End Class
+    Public Overridable Property CatalogItem As CatalogItem
+    Public Overridable Property OrderHeader As OrderHeader
 
-End Namespace
+End Class

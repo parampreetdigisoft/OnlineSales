@@ -10,18 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class USPSShipping
+    Public Property Id As Integer
+    Public Property UserId As String
+    Public Property Url As String
+    Public Property Username As String
+    Public Property Password As String
+    Public Property AdditionalHandlingCharge As String
+    Public Property CarrierServicesOfferedDomestic As String
+    Public Property CarrierServicesOfferedInternational As String
 
-    Partial Public Class USPSShipping
-        Public Property Id As Integer
-        Public Property UserId As String
-        Public Property Url As String
-        Public Property Username As String
-        Public Property Password As String
-        Public Property AdditionalHandlingCharge As String
-        Public Property CarrierServicesOfferedDomestic As String
-        Public Property CarrierServicesOfferedInternational As String
-    
-    End Class
-
-End Namespace
+End Class

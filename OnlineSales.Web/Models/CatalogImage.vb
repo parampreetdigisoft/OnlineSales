@@ -10,17 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class CatalogImage
+    Public Property CatalogImageId As Integer
+    Public Property CatalogItemId As Integer
+    Public Property Sequence As Short
+    Public Property ImageThumb As String
+    Public Property ImageLink As String
 
-    Partial Public Class CatalogImage
-        Public Property CatalogImageId As Integer
-        Public Property CatalogItemId As Integer
-        Public Property Sequence As Short
-        Public Property ImageThumb As String
-        Public Property ImageLink As String
-    
-        Public Overridable Property CatalogItem As CatalogItem
-    
-    End Class
+    Public Overridable Property CatalogItem As CatalogItem
 
-End Namespace
+End Class

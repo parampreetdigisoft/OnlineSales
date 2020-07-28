@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class ItemSubOption1
+    Public Property ItemOptionId As Integer
+    Public Property SubOptionId As Integer
 
-    Partial Public Class ItemSubOption1
-        Public Property ItemOptionId As Integer
-        Public Property SubOptionId As Integer
-    
-    End Class
-
-End Namespace
+End Class

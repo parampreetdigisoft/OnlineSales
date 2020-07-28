@@ -10,11 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryQbOrdersToProcess
+    Public Property OrderId As Integer
 
-    Partial Public Class qryQbOrdersToProcess
-        Public Property OrderId As Integer
-    
-    End Class
-
-End Namespace
+End Class

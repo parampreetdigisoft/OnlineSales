@@ -10,18 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryTaxStatew_Name
+    Public Property TaxStateId As Integer
+    Public Property TaxState As String
+    Public Property Name As String
+    Public Property UserId As Integer
+    Public Property TaxPercentage As Nullable(Of Decimal)
+    Public Property TaxCountry As String
+    Public Property TaxPercentage2 As Decimal
+    Public Property QbTaxCodeId As Nullable(Of Integer)
 
-    Partial Public Class qryTaxStatew_Name
-        Public Property TaxStateId As Integer
-        Public Property TaxState As String
-        Public Property Name As String
-        Public Property UserId As Integer
-        Public Property TaxPercentage As Nullable(Of Decimal)
-        Public Property TaxCountry As String
-        Public Property TaxPercentage2 As Decimal
-        Public Property QbTaxCodeId As Nullable(Of Integer)
-    
-    End Class
-
-End Namespace
+End Class

@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Language1
+    Public Property LanguageId As Short
+    Public Property LanguageName As String
 
-    Partial Public Class Language1
-        Public Property LanguageId As Short
-        Public Property LanguageName As String
-    
-    End Class
-
-End Namespace
+End Class

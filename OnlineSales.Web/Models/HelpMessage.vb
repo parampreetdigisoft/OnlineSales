@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class HelpMessage
+    Public Property HelpId As Integer
+    Public Property ComponentName As String
+    Public Property LanguageId As Nullable(Of Integer)
+    Public Property Json As String
 
-    Partial Public Class HelpMessage
-        Public Property HelpId As Integer
-        Public Property ComponentName As String
-        Public Property LanguageId As Nullable(Of Integer)
-        Public Property Json As String
-    
-    End Class
-
-End Namespace
+End Class

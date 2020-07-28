@@ -10,22 +10,18 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class GetResponse_CustomerCampaign
+    Public Property GetResponseCustomerId As Integer
+    Public Property CampaignId As String
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property IsDefault As Boolean
+    Public Property AddPostalToMessages As Nullable(Of Boolean)
+    Public Property Street As String
+    Public Property City As String
+    Public Property CompanyName As String
+    Public Property State As String
+    Public Property Country As String
+    Public Property ZipCode As String
 
-    Partial Public Class GetResponse_CustomerCampaign
-        Public Property GetResponseCustomerId As Integer
-        Public Property CampaignId As String
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property IsDefault As Boolean
-        Public Property AddPostalToMessages As Nullable(Of Boolean)
-        Public Property Street As String
-        Public Property City As String
-        Public Property CompanyName As String
-        Public Property State As String
-        Public Property Country As String
-        Public Property ZipCode As String
-    
-    End Class
-
-End Namespace
+End Class

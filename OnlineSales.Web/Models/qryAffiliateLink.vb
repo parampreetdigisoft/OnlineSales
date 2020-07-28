@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryAffiliateLink
+    Public Property AffiliateId As Integer
+    Public Property WebUrl As String
 
-    Partial Public Class qryAffiliateLink
-        Public Property AffiliateId As Integer
-        Public Property WebUrl As String
-    
-    End Class
-
-End Namespace
+End Class

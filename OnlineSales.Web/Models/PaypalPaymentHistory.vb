@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class PaypalPaymentHistory
+    Public Property PaypalPaymentId As Integer
+    Public Property UserId As Integer
+    Public Property PaymentInfo As String
+    Public Property CreatedDate As Date
 
-    Partial Public Class PaypalPaymentHistory
-        Public Property PaypalPaymentId As Integer
-        Public Property UserId As Integer
-        Public Property PaymentInfo As String
-        Public Property CreatedDate As Date
-    
-    End Class
-
-End Namespace
+End Class

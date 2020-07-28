@@ -10,25 +10,21 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class FedexShipping
+    Public Property Id As Integer
+    Public Property UserId As String
+    Public Property Url As String
+    Public Property Key As String
+    Public Property Password As String
+    Public Property AccountNumber As String
+    Public Property MeterNumber As String
+    Public Property UseResidentialRates As Nullable(Of Boolean)
+    Public Property ApplyDiscounts As Nullable(Of Boolean)
+    Public Property AdditionalHandlingCharge As Nullable(Of Decimal)
+    Public Property CarrierServicesOffered As String
+    Public Property PassDimensions As Nullable(Of Boolean)
+    Public Property PackingPackageVolume As Nullable(Of Short)
+    Public Property PackingType As Nullable(Of Short)
+    Public Property DropoffType As Nullable(Of Short)
 
-    Partial Public Class FedexShipping
-        Public Property Id As Integer
-        Public Property UserId As String
-        Public Property Url As String
-        Public Property Key As String
-        Public Property Password As String
-        Public Property AccountNumber As String
-        Public Property MeterNumber As String
-        Public Property UseResidentialRates As Nullable(Of Boolean)
-        Public Property ApplyDiscounts As Nullable(Of Boolean)
-        Public Property AdditionalHandlingCharge As Nullable(Of Decimal)
-        Public Property CarrierServicesOffered As String
-        Public Property PassDimensions As Nullable(Of Boolean)
-        Public Property PackingPackageVolume As Nullable(Of Short)
-        Public Property PackingType As Nullable(Of Short)
-        Public Property DropoffType As Nullable(Of Short)
-    
-    End Class
-
-End Namespace
+End Class

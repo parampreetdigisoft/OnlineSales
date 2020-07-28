@@ -10,22 +10,18 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Category
+    Public Property CategoryId As Integer
+    Public Property Name As String
+    Public Property Description As String
+    Public Property UserId As Integer
+    Public Property CreatedOn As Date
+    Public Property CreatedBy As Integer
+    Public Property ModifiedOn As Date
+    Public Property ModifiedBy As Integer
+    Public Property Deleted As Boolean
+    Public Property DeletedOn As Nullable(Of Date)
+    Public Property DeletedBy As Nullable(Of Integer)
+    Public Property Sequence As Integer
 
-    Partial Public Class Category
-        Public Property CategoryId As Integer
-        Public Property Name As String
-        Public Property Description As String
-        Public Property UserId As Integer
-        Public Property CreatedOn As Date
-        Public Property CreatedBy As Integer
-        Public Property ModifiedOn As Date
-        Public Property ModifiedBy As Integer
-        Public Property Deleted As Boolean
-        Public Property DeletedOn As Nullable(Of Date)
-        Public Property DeletedBy As Nullable(Of Integer)
-        Public Property Sequence As Integer
-    
-    End Class
-
-End Namespace
+End Class

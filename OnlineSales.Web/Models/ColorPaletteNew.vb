@@ -10,33 +10,29 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class ColorPaletteNew
+    Public Property PaletteId As Integer
+    Public Property PaletteName As String
+    Public Property PrimaryColor As String
+    Public Property PrimaryColor2 As String
+    Public Property PrimaryColor3 As String
+    Public Property AccentColor1 As String
+    Public Property AccentColor2 As String
+    Public Property AccentColor3 As String
+    Public Property TextColor As String
+    Public Property SecondaryTextColor As String
+    Public Property AlternateTextColor As String
+    Public Property CanvasColor As String
+    Public Property AlternateCanvasColor As String
+    Public Property Alternatecolor1 As String
+    Public Property AlternateColor2 As String
+    Public Property BorderColor As String
+    Public Property DiabledColor As String
+    Public Property FontFamily As String
+    Public Property FontSize As String
+    Public Property FontWeightLight As String
+    Public Property FontWeightRegular As String
+    Public Property FontWeightMedium As String
+    Public Property FontWeightBold As String
 
-    Partial Public Class ColorPaletteNew
-        Public Property PaletteId As Integer
-        Public Property PaletteName As String
-        Public Property PrimaryColor As String
-        Public Property PrimaryColor2 As String
-        Public Property PrimaryColor3 As String
-        Public Property AccentColor1 As String
-        Public Property AccentColor2 As String
-        Public Property AccentColor3 As String
-        Public Property TextColor As String
-        Public Property SecondaryTextColor As String
-        Public Property AlternateTextColor As String
-        Public Property CanvasColor As String
-        Public Property AlternateCanvasColor As String
-        Public Property Alternatecolor1 As String
-        Public Property AlternateColor2 As String
-        Public Property BorderColor As String
-        Public Property DiabledColor As String
-        Public Property FontFamily As String
-        Public Property FontSize As String
-        Public Property FontWeightLight As String
-        Public Property FontWeightRegular As String
-        Public Property FontWeightMedium As String
-        Public Property FontWeightBold As String
-    
-    End Class
-
-End Namespace
+End Class

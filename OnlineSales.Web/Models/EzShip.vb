@@ -10,21 +10,17 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class EzShip
+    Public Property EzShipId As Integer
+    Public Property UserId As Integer
+    Public Property Country As String
+    Public Property Description As String
+    Public Property FirstItem As Nullable(Of Decimal)
+    Public Property NextItems As Nullable(Of Decimal)
+    Public Property FreeOver As Nullable(Of Decimal)
+    Public Property CountryRegion As String
+    Public Property DefaultMethod As Boolean
 
-    Partial Public Class EzShip
-        Public Property EzShipId As Integer
-        Public Property UserId As Integer
-        Public Property Country As String
-        Public Property Description As String
-        Public Property FirstItem As Nullable(Of Decimal)
-        Public Property NextItems As Nullable(Of Decimal)
-        Public Property FreeOver As Nullable(Of Decimal)
-        Public Property CountryRegion As String
-        Public Property DefaultMethod As Boolean
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

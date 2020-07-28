@@ -10,38 +10,34 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryCompleteCatalog
+    Public Property UserId As Integer
+    Public Property CategoryId As Nullable(Of Integer)
+    Public Property CategoryDescription As String
+    Public Property CategorySequence As Short
+    Public Property CategoryImage As String
+    Public Property CatalogItemId As Integer
+    Public Property CatalogItemSequence As Short
+    Public Property CatalogItemName As String
+    Public Property CatalogItemDescription As String
+    Public Property Price As Nullable(Of Decimal)
+    Public Property Taxable As Boolean
+    Public Property Sku As String
+    Public Property ImageThumb As String
+    Public Property ImageLink As String
+    Public Property AdditionalInfoLink As String
+    Public Property Weight As Integer
+    Public Property DigitalProduct As Boolean
+    Public Property DiscountSchedule As String
+    Public Property ItemOptionGroupId As Nullable(Of Integer)
+    Public Property OptionGroupName As String
+    Public Property OptionGroupSequence As Nullable(Of Byte)
+    Public Property OptionGroupDescription1 As String
+    Public Property CheckBox As Nullable(Of Boolean)
+    Public Property Split As Nullable(Of Boolean)
+    Public Property ItemOptionId As Nullable(Of Integer)
+    Public Property ItemOptionDescription As String
+    Public Property ItemOptionPrice As Nullable(Of Decimal)
+    Public Property ImageSequence As Short
 
-    Partial Public Class qryCompleteCatalog
-        Public Property UserId As Integer
-        Public Property CategoryId As Nullable(Of Integer)
-        Public Property CategoryDescription As String
-        Public Property CategorySequence As Short
-        Public Property CategoryImage As String
-        Public Property CatalogItemId As Integer
-        Public Property CatalogItemSequence As Short
-        Public Property CatalogItemName As String
-        Public Property CatalogItemDescription As String
-        Public Property Price As Nullable(Of Decimal)
-        Public Property Taxable As Boolean
-        Public Property Sku As String
-        Public Property ImageThumb As String
-        Public Property ImageLink As String
-        Public Property AdditionalInfoLink As String
-        Public Property Weight As Integer
-        Public Property DigitalProduct As Boolean
-        Public Property DiscountSchedule As String
-        Public Property ItemOptionGroupId As Nullable(Of Integer)
-        Public Property OptionGroupName As String
-        Public Property OptionGroupSequence As Nullable(Of Byte)
-        Public Property OptionGroupDescription1 As String
-        Public Property CheckBox As Nullable(Of Boolean)
-        Public Property Split As Nullable(Of Boolean)
-        Public Property ItemOptionId As Nullable(Of Integer)
-        Public Property ItemOptionDescription As String
-        Public Property ItemOptionPrice As Nullable(Of Decimal)
-        Public Property ImageSequence As Short
-    
-    End Class
-
-End Namespace
+End Class

@@ -10,19 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class QuickBookCustomer
+    Public Property QuickBookCustomerId As Integer
+    Public Property UserId As Integer
+    Public Property ConsumerKey As String
+    Public Property ConsumerSecret As String
+    Public Property Active As Boolean
+    Public Property QBCustomerApiId As String
 
-    Partial Public Class QuickBookCustomer
-        Public Property QuickBookCustomerId As Integer
-        Public Property UserId As Integer
-        Public Property ConsumerKey As String
-        Public Property ConsumerSecret As String
-        Public Property Active As Boolean
-        Public Property QBCustomerApiId As String
-    
-        Public Overridable Property QuickBookCustomer1 As QuickBookCustomer
-        Public Overridable Property QuickBookCustomer2 As QuickBookCustomer
-    
-    End Class
+    Public Overridable Property QuickBookCustomer1 As QuickBookCustomer
+    Public Overridable Property QuickBookCustomer2 As QuickBookCustomer
 
-End Namespace
+End Class

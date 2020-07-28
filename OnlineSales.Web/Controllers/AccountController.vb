@@ -16,12 +16,14 @@ Namespace Controllers
 
 #Region "Properties"
         Public Shared Property WebUrl As String
+        Public Shared Property NiftyUrl As String
         Private Property _accountService As IAccount
 #End Region
 
 #Region "Constructor"
         Public Sub New()
             WebUrl = WebConfigurationManager.AppSettings("WebUrl")
+            NiftyUrl = WebConfigurationManager.AppSettings("NiftyHost")
             _accountService = New AccountService()
         End Sub
 #End Region
@@ -178,8 +180,9 @@ Namespace Controllers
         <HttpPost>
         Public Function ConfirmPassword(ByVal userViewModel As UserViewModel) As ActionResult
             Try
-                _accountService.UpdatePassword(userViewModel)
-                Return Json(New With {Key .Success = True})
+                Dim userID = _accountService.UpdatePassword(userViewModel)
+                Dim Url As String = String.Format("{0}/account/index/{1}", NiftyUrl, userID)
+                Return Json(New With {Key .Success = True, Key .UserId = userID, Key .Url = Url})
             Catch __unusedException1__ As Exception
                 Return Json(New With {Key .Success = False})
             End Try

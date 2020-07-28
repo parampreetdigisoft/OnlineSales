@@ -10,32 +10,28 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryLogin
+    Public Property LoginId As Integer
+    Public Property UserId As Integer
+    Public Property Master As Boolean
+    Public Property UserActive As Boolean
+    Public Property AccessLevel As Short
+    Public Property Login As String
+    Public Property Password As String
+    Public Property Email As String
+    Public Property CellPhone As String
+    Public Property Active As Boolean
+    Public Property CustomerName As String
+    Public Property ServiceLevel As Byte
+    Public Property OpenDate As Date
+    Public Property StripeAccount As String
+    Public Property Initials As String
+    Public Property bTestMode As Boolean
+    Public Property SignupStep As Byte
+    Public Property AccountActive As Nullable(Of Boolean)
+    Public Property FiveMinuteDone As Boolean
+    Public Property BasicCatalogDone As Boolean
+    Public Property EzShipDone As Boolean
+    Public Property FirstVisit As Boolean
 
-    Partial Public Class qryLogin
-        Public Property LoginId As Integer
-        Public Property UserId As Integer
-        Public Property Master As Boolean
-        Public Property UserActive As Boolean
-        Public Property AccessLevel As Short
-        Public Property Login As String
-        Public Property Password As String
-        Public Property Email As String
-        Public Property CellPhone As String
-        Public Property Active As Boolean
-        Public Property CustomerName As String
-        Public Property ServiceLevel As Byte
-        Public Property OpenDate As Date
-        Public Property StripeAccount As String
-        Public Property Initials As String
-        Public Property bTestMode As Boolean
-        Public Property SignupStep As Byte
-        Public Property AccountActive As Nullable(Of Boolean)
-        Public Property FiveMinuteDone As Boolean
-        Public Property BasicCatalogDone As Boolean
-        Public Property EzShipDone As Boolean
-        Public Property FirstVisit As Boolean
-    
-    End Class
-
-End Namespace
+End Class

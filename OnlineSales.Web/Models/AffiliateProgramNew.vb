@@ -10,26 +10,22 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class AffiliateProgramNew
+    Public Property AffiliateProgramId As Integer
+    Public Property UserId As Integer
+    Public Property Name As String
+    Public Property Description As String
+    Public Property PayPerLead As Integer
+    Public Property PayPerSale As Integer
+    Public Property CookieDays As Integer
+    Public Property InfoUrl As String
+    Public Property WebUrl As String
+    Public Property PctFlag As Nullable(Of Integer)
+    Public Property Amt1 As Nullable(Of Integer)
+    Public Property Amt2 As Nullable(Of Integer)
+    Public Property Offline As Nullable(Of Integer)
+    Public Property EmailNotice As String
+    Public Property EmailOrders As String
+    Public Property MailListId As Nullable(Of Integer)
 
-    Partial Public Class AffiliateProgramNew
-        Public Property AffiliateProgramId As Integer
-        Public Property UserId As Integer
-        Public Property Name As String
-        Public Property Description As String
-        Public Property PayPerLead As Integer
-        Public Property PayPerSale As Integer
-        Public Property CookieDays As Integer
-        Public Property InfoUrl As String
-        Public Property WebUrl As String
-        Public Property PctFlag As Nullable(Of Integer)
-        Public Property Amt1 As Nullable(Of Integer)
-        Public Property Amt2 As Nullable(Of Integer)
-        Public Property Offline As Nullable(Of Integer)
-        Public Property EmailNotice As String
-        Public Property EmailOrders As String
-        Public Property MailListId As Nullable(Of Integer)
-    
-    End Class
-
-End Namespace
+End Class

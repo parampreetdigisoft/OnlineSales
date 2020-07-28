@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Download
+    Public Property DownloadId As Integer
+    Public Property DownloadDate As Date
+    Public Property Filename As String
+    Public Property BogusName As String
 
-    Partial Public Class Download
-        Public Property DownloadId As Integer
-        Public Property DownloadDate As Date
-        Public Property Filename As String
-        Public Property BogusName As String
-    
-    End Class
-
-End Namespace
+End Class

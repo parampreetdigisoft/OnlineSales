@@ -10,16 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class UserSecurity
+    Public Property UserSecurityId As Integer
+    Public Property ObjectId As Integer
+    Public Property LoginId As Integer
+    Public Property UserId As Integer
 
-    Partial Public Class UserSecurity
-        Public Property UserSecurityId As Integer
-        Public Property ObjectId As Integer
-        Public Property LoginId As Integer
-        Public Property UserId As Integer
-    
-        Public Overridable Property SecurityObject As SecurityObject
-    
-    End Class
+    Public Overridable Property SecurityObject As SecurityObject
 
-End Namespace
+End Class

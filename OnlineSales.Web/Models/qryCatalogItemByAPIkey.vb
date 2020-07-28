@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryCatalogItemByAPIkey
+    Public Property ItemId As Integer
+    Public Property Name As String
+    Public Property UserId As Integer
+    Public Property APIKey As String
 
-    Partial Public Class qryCatalogItemByAPIkey
-        Public Property ItemId As Integer
-        Public Property Name As String
-        Public Property UserId As Integer
-        Public Property APIKey As String
-    
-    End Class
-
-End Namespace
+End Class

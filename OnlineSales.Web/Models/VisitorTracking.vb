@@ -10,21 +10,17 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class VisitorTracking
+    Public Property VisitorTrackingId As Long
+    Public Property VisitorId As Long
+    Public Property VisitDateTime As Date
+    Public Property ItemId As Nullable(Of Long)
+    Public Property Action As Short
+    Public Property VisitorReferralData As String
 
-    Partial Public Class VisitorTracking
-        Public Property VisitorTrackingId As Long
-        Public Property VisitorId As Long
-        Public Property VisitDateTime As Date
-        Public Property ItemId As Nullable(Of Long)
-        Public Property Action As Short
-        Public Property VisitorReferralData As String
-    
-        Public Overridable Property Visitor As Visitor
-        Public Overridable Property VisitorAction As VisitorAction
-        Public Overridable Property VisitorTracking1 As VisitorTracking
-        Public Overridable Property VisitorTracking2 As VisitorTracking
-    
-    End Class
+    Public Overridable Property Visitor As Visitor
+    Public Overridable Property VisitorAction As VisitorAction
+    Public Overridable Property VisitorTracking1 As VisitorTracking
+    Public Overridable Property VisitorTracking2 As VisitorTracking
 
-End Namespace
+End Class

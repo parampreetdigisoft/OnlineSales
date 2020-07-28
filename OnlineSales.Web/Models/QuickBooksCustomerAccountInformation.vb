@@ -10,28 +10,24 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class QuickBooksCustomerAccountInformation
+    Public Property QBCustomerAccountInfoId As Integer
+    Public Property QBCustomerId As String
+    Public Property QbSalesAccount As String
+    Public Property QbSalesTax As Nullable(Of Decimal)
+    Public Property QbSalesDiscounts As Nullable(Of Decimal)
+    Public Property QbFreightIncome As Nullable(Of Decimal)
+    Public Property QbCash As String
+    Public Property QbCostOfGoods As Nullable(Of Decimal)
+    Public Property QbUndepositiedFunds As Nullable(Of Decimal)
+    Public Property QbSalesId As String
+    Public Property QbSalesTaxId As String
+    Public Property QbDiscountsId As String
+    Public Property QbFreightId As String
+    Public Property QbCashId As String
+    Public Property QbCostofGoodsId As String
+    Public Property QbUndepositedFundsId As String
+    Public Property Annual As Boolean
+    Public Property CreatedOn As Date
 
-    Partial Public Class QuickBooksCustomerAccountInformation
-        Public Property QBCustomerAccountInfoId As Integer
-        Public Property QBCustomerId As String
-        Public Property QbSalesAccount As String
-        Public Property QbSalesTax As Nullable(Of Decimal)
-        Public Property QbSalesDiscounts As Nullable(Of Decimal)
-        Public Property QbFreightIncome As Nullable(Of Decimal)
-        Public Property QbCash As String
-        Public Property QbCostOfGoods As Nullable(Of Decimal)
-        Public Property QbUndepositiedFunds As Nullable(Of Decimal)
-        Public Property QbSalesId As String
-        Public Property QbSalesTaxId As String
-        Public Property QbDiscountsId As String
-        Public Property QbFreightId As String
-        Public Property QbCashId As String
-        Public Property QbCostofGoodsId As String
-        Public Property QbUndepositedFundsId As String
-        Public Property Annual As Boolean
-        Public Property CreatedOn As Date
-    
-    End Class
-
-End Namespace
+End Class

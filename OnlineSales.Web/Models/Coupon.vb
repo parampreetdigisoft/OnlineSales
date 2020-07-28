@@ -10,23 +10,19 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class Coupon
+    Public Property Couponid As Integer
+    Public Property UserId As Integer
+    Public Property CouponCode As String
+    Public Property Description As String
+    Public Property DiscountTypeId As Byte
+    Public Property DiscountRate As Decimal
+    Public Property OverAmount As Decimal
+    Public Property ExpirationDate As Date
+    Public Property BonusDescription As String
+    Public Property BonusLink As String
+    Public Property StripeCouponCode As String
 
-    Partial Public Class Coupon
-        Public Property Couponid As Integer
-        Public Property UserId As Integer
-        Public Property CouponCode As String
-        Public Property Description As String
-        Public Property DiscountTypeId As Byte
-        Public Property DiscountRate As Decimal
-        Public Property OverAmount As Decimal
-        Public Property ExpirationDate As Date
-        Public Property BonusDescription As String
-        Public Property BonusLink As String
-        Public Property StripeCouponCode As String
-    
-        Public Overridable Property OurCustomer As OurCustomer
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
 
-End Namespace
+End Class

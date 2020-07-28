@@ -10,15 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class sysdiagram
+    Public Property name As String
+    Public Property principal_id As Integer
+    Public Property diagram_id As Integer
+    Public Property version As Nullable(Of Integer)
+    Public Property definition As Byte()
 
-    Partial Public Class sysdiagram
-        Public Property name As String
-        Public Property principal_id As Integer
-        Public Property diagram_id As Integer
-        Public Property version As Nullable(Of Integer)
-        Public Property definition As Byte()
-    
-    End Class
-
-End Namespace
+End Class

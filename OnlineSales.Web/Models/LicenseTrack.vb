@@ -10,24 +10,20 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class LicenseTrack
+    Public Property Id As Integer
+    Public Property UserId As Integer
+    Public Property CompanyName As String
+    Public Property Contact As String
+    Public Property Phone As String
+    Public Property Email As String
+    Public Property LicensesPurchased As Short
+    Public Property LicensesUsed As Short
+    Public Property OpenDate As Date
+    Public Property LastActionDate As Date
+    Public Property Active As Boolean
+    Public Property Version As Nullable(Of Short)
+    Public Property AnnualExpiration As Nullable(Of Date)
+    Public Property PaidInFull As Boolean
 
-    Partial Public Class LicenseTrack
-        Public Property Id As Integer
-        Public Property UserId As Integer
-        Public Property CompanyName As String
-        Public Property Contact As String
-        Public Property Phone As String
-        Public Property Email As String
-        Public Property LicensesPurchased As Short
-        Public Property LicensesUsed As Short
-        Public Property OpenDate As Date
-        Public Property LastActionDate As Date
-        Public Property Active As Boolean
-        Public Property Version As Nullable(Of Short)
-        Public Property AnnualExpiration As Nullable(Of Date)
-        Public Property PaidInFull As Boolean
-    
-    End Class
-
-End Namespace
+End Class

@@ -10,15 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryActiveCoupon
+    Public Property UserId As Integer
+    Public Property Couponid As Integer
+    Public Property CouponCode As String
+    Public Property DiscountTypeId As Byte
+    Public Property ExpirationDate As Date
 
-    Partial Public Class qryActiveCoupon
-        Public Property UserId As Integer
-        Public Property Couponid As Integer
-        Public Property CouponCode As String
-        Public Property DiscountTypeId As Byte
-        Public Property ExpirationDate As Date
-    
-    End Class
-
-End Namespace
+End Class

@@ -108,7 +108,7 @@ Public Class AccountService
     ''' update password
     ''' </summary>
     ''' <param name="userViewModel"></param>
-    Sub UpdatePassword(ByVal userViewModel As UserViewModel) Implements IAccount.UpdatePassword
+    Public Function UpdatePassword(ByVal userViewModel As UserViewModel) Implements IAccount.UpdatePassword
         ' get customer info by apikey
         Dim ourCustomer = _ourCustomerRepository.GetByApiKey(userViewModel.ApiKey)
         ' get login info by user id
@@ -117,12 +117,13 @@ Public Class AccountService
             ' update password into login table
             login.Password = Encryption.Encrypt(userViewModel.Password)
             login.Active = True
+            login.IsNew = True
             _loginRepository.Update(login)
 
             ' Update into ourcutomer table
             ourCustomer.EmailVerified = 1
             ourCustomer.SignupStep = 1
-
+            _ourCustomerRepository.Update(ourCustomer)
             ''Using client As HttpClient = New HttpClient()
             ''    'Using response As HttpResponseMessage = client.GetAsync(Page)
             ''    Dim Content As StringContent = New StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json")
@@ -141,7 +142,8 @@ Public Class AccountService
             ''    'End Using
             ''End Using
         End If
-    End Sub
+        Return ourCustomer.UserId
+    End Function
 
     ''' <summary>
     ''' get ourcutomer detail by email address
@@ -167,6 +169,7 @@ Public Class AccountService
             responseViewModel.Message = "Incorrect Username or Email"
         Else
             ' check password is match or not
+            'Dim encryptPassword = Encryption.Decrypt(loginViewModel.Password)
             Dim encryptPassword = Encryption.Encrypt(loginViewModel.Password)
             If login.Password = encryptPassword Then
                 responseViewModel.Status = True

@@ -10,42 +10,38 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class qryBasicCatalogItem
+    Public Property CatalogItemId As Integer
+    Public Property Sequence As Short
+    Public Property CatalogItemName As String
+    Public Property CatalogItemDescription As String
+    Public Property Price As Nullable(Of Decimal)
+    Public Property Active As Boolean
+    Public Property Taxable As Boolean
+    Public Property Weight As Integer
+    Public Property ImageThumb As String
+    Public Property ImageLink As String
+    Public Property AdditionalInfoLink As String
+    Public Property Sku As String
+    Public Property ItemOptionGroupId As Nullable(Of Integer)
+    Public Property OptionGroupName As String
+    Public Property OptionGroupSequence As Nullable(Of Byte)
+    Public Property OptionGroupDescription As String
+    Public Property CheckBox As Nullable(Of Boolean)
+    Public Property Split As Nullable(Of Boolean)
+    Public Property ItemOptionId As Nullable(Of Integer)
+    Public Property ItemOptionDescription As String
+    Public Property ItemOptionPrice As Nullable(Of Decimal)
+    Public Property UserId As Integer
+    Public Property ButtonColor As String
+    Public Property ButtonTextColor As String
+    Public Property CustomerName As String
+    Public Property DigitalProduct As Boolean
+    Public Property DiscountSchedule As String
+    Public Property BuyNowButton As String
+    Public Property FavoriteItem As Boolean
+    Public Property SignupStep As Byte
+    Public Property OpenDate As Date
+    Public Property ImageSequence As Nullable(Of Short)
 
-    Partial Public Class qryBasicCatalogItem
-        Public Property CatalogItemId As Integer
-        Public Property Sequence As Short
-        Public Property CatalogItemName As String
-        Public Property CatalogItemDescription As String
-        Public Property Price As Nullable(Of Decimal)
-        Public Property Active As Boolean
-        Public Property Taxable As Boolean
-        Public Property Weight As Integer
-        Public Property ImageThumb As String
-        Public Property ImageLink As String
-        Public Property AdditionalInfoLink As String
-        Public Property Sku As String
-        Public Property ItemOptionGroupId As Nullable(Of Integer)
-        Public Property OptionGroupName As String
-        Public Property OptionGroupSequence As Nullable(Of Byte)
-        Public Property OptionGroupDescription As String
-        Public Property CheckBox As Nullable(Of Boolean)
-        Public Property Split As Nullable(Of Boolean)
-        Public Property ItemOptionId As Nullable(Of Integer)
-        Public Property ItemOptionDescription As String
-        Public Property ItemOptionPrice As Nullable(Of Decimal)
-        Public Property UserId As Integer
-        Public Property ButtonColor As String
-        Public Property ButtonTextColor As String
-        Public Property CustomerName As String
-        Public Property DigitalProduct As Boolean
-        Public Property DiscountSchedule As String
-        Public Property BuyNowButton As String
-        Public Property FavoriteItem As Boolean
-        Public Property SignupStep As Byte
-        Public Property OpenDate As Date
-        Public Property ImageSequence As Nullable(Of Short)
-    
-    End Class
-
-End Namespace
+End Class

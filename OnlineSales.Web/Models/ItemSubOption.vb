@@ -10,17 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class ItemSubOption
+    Public Property SubOptionId As Integer
+    Public Property UserId As Integer
+    Public Property Description As String
+    Public Property Price As Decimal
 
-    Partial Public Class ItemSubOption
-        Public Property SubOptionId As Integer
-        Public Property UserId As Integer
-        Public Property Description As String
-        Public Property Price As Decimal
-    
-        Public Overridable Property OurCustomer As OurCustomer
-        Public Overridable Property OrderSubOptions As ICollection(Of OrderSubOption) = New HashSet(Of OrderSubOption)
-    
-    End Class
+    Public Overridable Property OurCustomer As OurCustomer
+    Public Overridable Property OrderSubOptions As ICollection(Of OrderSubOption) = New HashSet(Of OrderSubOption)
 
-End Namespace
+End Class

@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class ItemUpsell1
+    Public Property ItemUpsellGroupId As Integer
+    Public Property ItemUpsellId As Integer
 
-    Partial Public Class ItemUpsell1
-        Public Property ItemUpsellGroupId As Integer
-        Public Property ItemUpsellId As Integer
-    
-    End Class
-
-End Namespace
+End Class

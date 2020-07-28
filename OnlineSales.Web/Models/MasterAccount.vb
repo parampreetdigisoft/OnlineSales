@@ -10,14 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace OnlineSales.Web
+Partial Public Class MasterAccount
+    Public Property LoginId As Integer
+    Public Property MasterName As String
+    Public Property StripeAccount As String
+    Public Property ServiceLevel As Byte
 
-    Partial Public Class MasterAccount
-        Public Property LoginId As Integer
-        Public Property MasterName As String
-        Public Property StripeAccount As String
-        Public Property ServiceLevel As Byte
-    
-    End Class
-
-End Namespace
+End Class
