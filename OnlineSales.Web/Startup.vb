@@ -17,5 +17,6 @@ Public Class Startup
         Utils.Account = ConfigurationManager.AppSettings("SMTP_Account")
         Utils.Port = ConfigurationManager.AppSettings("Port")
         Utils.Host = ConfigurationManager.AppSettings("Host")
+        Utils.Host = ConfigurationManager.AppSettings("StripeApiKey")
     End Sub
 End Class

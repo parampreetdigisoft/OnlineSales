@@ -5,7 +5,7 @@ Imports RestSharp
 Imports Stripe
 
 Namespace Controllers
-    Public Class StripeController
+    Public Class StripeOldController
         Inherits Controller
 
         Function Index(ByVal code As String, ByVal scope As String, ByVal state As String) As String

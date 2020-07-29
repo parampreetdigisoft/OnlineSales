@@ -1,35 +1,61 @@
-﻿Imports System.Web.Mvc
-Imports Microsoft.Extensions
-Imports Newtonsoft.Json
-Imports RestSharp
+﻿Imports System.Net
+Imports System.Web.Http
 Imports Stripe
 
-Namespace Controllers
-    Public Class StripeController
-        Inherits Controller
+Public Class StripeController
+    Inherits ApiController
 
-        Function Index(ByVal code As String, ByVal scope As String, ByVal state As String) As String
-            Dim result = GetStripeKey(code)
-            Return code
-        End Function
 
-        Function GetStripeKey(ByVal code As String) As String
-            ' Post request     https://connect.stripe.com/oauth/token
-            'Dim StripeConfiguration.ApiKey = "sk_test_51H6xPoDq9WcbpAQn8LKmvqPSoClBKi7lT6TwCGCKRFkNXB6MZC4OtbWC1rwNx2KnBfZptfnXIcaNwxCjhpa6DAiz0094D84PAC";
-            StripeConfiguration.ApiKey = "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"
-            Dim Options As OAuthTokenCreateOptions = New OAuthTokenCreateOptions()
-            Options.GrantType = "authorization_code"
-            Options.Code = code '"ac_123456789"
-            Dim service = New OAuthTokenService()
-            Dim Response = service.Create(Options)
-            Dim connected_account_id = Response.StripeUserId
-            Return connected_account_id
+#Region "Properties"
+    Private Property _accountService As IAccount
+#End Region
 
-            'Dim _client As IRestClient = New RestClient()
-            'Dim Request = New RestRequest("https://connect.stripe.com/oauth/token", Method.POST) With {.RequestFormat = RestSharp.DataFormat.Json}
-            'Request.AddJsonBody(Options)
-            'Dim stripeResponse As IRestResponse = _client.Execute(Request)
-        End Function
+    ' POST api/Stripe/StripeAuth?scope&code
+    <HttpGet>
+    Public Function StripeAuth(ByVal code As String, ByVal scope As String)
 
-    End Class
-End Namespace
+        StripeConfiguration.ApiKey = Utils.StripeApiKey
+        Dim options = New OAuthTokenCreateOptions With {
+            .GrantType = "authorization_code",
+            .Code = If(String.IsNullOrEmpty(code), "", Convert.ToString(code))
+        }
+        Dim service = New OAuthTokenService()
+        Dim response = service.Create(options)
+
+        If response IsNot Nothing Then
+            Dim connected_account_id = response.StripeUserId
+            Dim result = _accountService.SaveStripeAuthToken(response)
+            Return Json(New With {Key .Message = result.Message, Key .Success = result.Status})
+        Else
+            Return Json(New With {Key .Message = "Access Denied  Please Contact Admin", Key .Success = False})
+        End If
+
+    End Function
+
+
+
+    ' GET api/<controller>
+    'Public Function GetValues() As IEnumerable(Of String)
+    '    Return New String() {"value1", "value2"}
+    'End Function
+
+    '' GET api/<controller>/5
+    'Public Function GetValue(ByVal id As Integer) As String
+    '    Return "value"
+    'End Function
+
+    '' POST api/<controller>
+    'Public Sub PostValue(<FromBody()> ByVal value As String)
+
+    'End Sub
+
+    ' PUT api/<controller>/5
+    'Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)
+
+    'End Sub
+
+    '' DELETE api/<controller>/5
+    'Public Sub DeleteValue(ByVal id As Integer)
+
+    'End Sub
+End Class

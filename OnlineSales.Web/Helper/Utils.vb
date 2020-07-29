@@ -8,6 +8,7 @@ Public Class Utils
     Public Shared Property Account As String
     Public Shared Property Port As String
     Public Shared Property Host As String
+    Public Shared Property StripeApiKey As String
 
     ''' <summary>
     ''' send mail

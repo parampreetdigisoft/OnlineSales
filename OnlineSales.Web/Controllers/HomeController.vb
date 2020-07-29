@@ -25,6 +25,12 @@ Public Class HomeController
         Else
             stripeViewModel.IsStripeAccessToken = False
         End If
+
+        'store user email in session
+        If String.IsNullOrEmpty(emailId) Then
+            Session("email") = emailId
+        End If
+
         Return View(stripeViewModel)
     End Function
 

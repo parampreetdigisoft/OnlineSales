@@ -1,6 +1,7 @@
 ﻿Imports System.Net.Http
 Imports Newtonsoft.Json
 Imports OnlineSales.Web.OnlineSales.Web
+Imports Stripe
 
 Public Class AccountService
     Implements IAccount
@@ -153,6 +154,46 @@ Public Class AccountService
     Public Function GetOurCustomerByEmail(ByVal email As String) As OurCustomer Implements IAccount.GetOurCustomerByEmail
         Return _ourCustomerRepository.GetbyEmailAddress(email)
     End Function
+    ''' <summary>
+    ''' SaveStripe Auth details
+    ''' </summary>
+    ''' <param name="stripeResponse"></param>
+    ''' <returns></returns>
+    Public Function SaveStripeAuthToken(ByVal stripeResponse As OAuthToken) As ResponseViewModel Implements IAccount.SaveStripeAuthToken
+        Dim responseViewModel As ResponseViewModel = New ResponseViewModel
+
+        Dim email = HttpContext.Current.Session("email").ToString()
+        If (Not String.IsNullOrEmpty(Convert.ToString(HttpContext.Current.Session("email")))) Then
+
+            ' get ourCustomer info by email
+            Dim ourCustomer = _ourCustomerRepository.GetbyEmailAddress("parampreet.digisoft@gmail.com")
+            Try
+
+                If ourCustomer IsNot Nothing Then
+
+                    ' Update into ourcutomer table
+                    ourCustomer.EmailVerified = 1
+                    ourCustomer.SignupStep = 1
+                    _ourCustomerRepository.Update(ourCustomer)
+                    responseViewModel.Status = True
+                    responseViewModel.Message = "Successfully Updated"
+                Else
+                    responseViewModel.Status = False
+                    responseViewModel.Message = "Invalid Customer "
+
+                End If
+            Catch ex As Exception
+                responseViewModel.Status = False
+                responseViewModel.Message = "Invalid Customer"
+                Return responseViewModel
+            End Try
+        End If
+
+
+        Return responseViewModel
+    End Function
+
+
 
     ''' <summary>
     ''' authenticate user
