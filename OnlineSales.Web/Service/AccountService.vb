@@ -1,6 +1,8 @@
 ﻿Imports System.Net.Http
+Imports System.Web.Configuration
 Imports Newtonsoft.Json
 Imports OnlineSales.Web.OnlineSales.Web
+Imports RestSharp
 Imports Stripe
 
 Public Class AccountService
@@ -11,10 +13,15 @@ Public Class AccountService
     Private Property _loginRepository As LoginRepository
     Private Property _couponRepository As CouponRepository
 
+    Private Shared Property _getResponseBaseUrl As String
+    Private Shared Property _getResponseApiKey As String
+
 #End Region
 
 #Region "Constructor"
     Public Sub New()
+        _getResponseBaseUrl = WebConfigurationManager.AppSettings("GetResponseBaseUrl")
+        _getResponseApiKey = WebConfigurationManager.AppSettings("GetResponseApiKey")
         _ourCustomerRepository = New OurCustomerRepository()
         _loginRepository = New LoginRepository()
         _couponRepository = New CouponRepository()
@@ -112,8 +119,14 @@ Public Class AccountService
     Public Function UpdatePassword(ByVal userViewModel As UserViewModel) Implements IAccount.UpdatePassword
         ' get customer info by apikey
         Dim ourCustomer = _ourCustomerRepository.GetByApiKey(userViewModel.ApiKey)
+
         ' get login info by user id
         Dim login = _loginRepository.GetByUserId(ourCustomer.UserId)
+        Dim IsFirstTime As Boolean = False
+        If login.Password Is Nothing Then
+            IsFirstTime = True
+        End If
+
         If login IsNot Nothing Then
             ' update password into login table
             login.Password = Encryption.Encrypt(userViewModel.Password)
@@ -125,23 +138,36 @@ Public Class AccountService
             ourCustomer.EmailVerified = 1
             ourCustomer.SignupStep = 1
             _ourCustomerRepository.Update(ourCustomer)
-            ''Using client As HttpClient = New HttpClient()
-            ''    'Using response As HttpResponseMessage = client.GetAsync(Page)
-            ''    Dim Content As StringContent = New StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json")
-            ''    Dim apiBaseUrl As String = "https://app.getresponse.com/"
-            ''    Dim endpoint As String = apiBaseUrl + "/Contact"
-            ''    'Using content As HttpContent = response.Content
-            ''    Using response As HttpResponseMessage = Await client.PostAsync(endpoint, Content)
-            ''        If response.StatusCode = Net.HttpStatusCode.OK Then
-            ''            'ourCustomer.IsNew = 1
-            ''            _ourCustomerRepository.Update(ourCustomer)
-            ''            'response.Write(String.Format("<script>window.location.href='{0}';</script>", "http://whatever.com"));
-            ''        Else
-            ''            _ourCustomerRepository.Update(ourCustomer)
-            ''        End If
-            ''    End Using
-            ''    'End Using
-            ''End Using
+
+            'Add the user information as contact to GetResponse by using RestApi
+            If IsFirstTime Then
+                Try
+                    Dim contact = New ContactModel()
+                    Dim ipAddress As String = Utils.GetPublicIPAddress()
+                    If String.IsNullOrEmpty(ipAddress) Then
+                        contact.ipAddress = "127.0.0.1"
+                    Else
+                        contact.ipAddress = ipAddress
+                    End If
+                    contact.email = login.Email
+                    contact.dayOfCycle = 0
+                    contact.campaign = New Compaign()
+                    contact.campaign.campaignId = "WD9XN"
+                    contact.name = ourCustomer.CustomerName
+
+                    Dim client As RestClient = New RestClient(_getResponseBaseUrl)
+                    Dim request = New RestRequest("contacts", Method.POST).AddJsonBody(contact)
+                    request.AddHeader("X-Auth-Token", _getResponseApiKey)
+                    Dim response As IRestResponse = client.Execute(request)
+
+                    If response.StatusCode = Net.HttpStatusCode.OK Then
+                        'response.Write(String.Format("<script>window.location.href='{0}';</script>", "http://whatever.com"));
+                    Else
+                    End If
+                Catch ex As Exception
+                    Dim s = ex.Message
+                End Try
+            End If
         End If
         Return ourCustomer.UserId
     End Function
