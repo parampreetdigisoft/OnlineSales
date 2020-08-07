@@ -15,9 +15,7 @@ Namespace Controllers
 
         Function GetStripeKey(ByVal code As String) As String
             ' Post request     https://connect.stripe.com/oauth/token
-            'Dim StripeConfiguration.ApiKey = "sk_test_51H6xPoDq9WcbpAQn8LKmvqPSoClBKi7lT6TwCGCKRFkNXB6MZC4OtbWC1rwNx2KnBfZptfnXIcaNwxCjhpa6DAiz0094D84PAC";
-            'StripeConfiguration.ApiKey = "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"
-            StripeConfiguration.ApiKey = "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"
+            StripeConfiguration.ApiKey = "sk_test_51H6xPoDq9WcbpAQn8LKmvqPSoClBKi7lT6TwCGCKRFkNXB6MZC4OtbWC1rwNx2KnBfZptfnXIcaNwxCjhpa6DAiz0094D84PAC"
             Dim Options As OAuthTokenCreateOptions = New OAuthTokenCreateOptions()
             Options.GrantType = "authorization_code"
             Options.Code = code '"ac_123456789"

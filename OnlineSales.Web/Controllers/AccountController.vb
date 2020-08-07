@@ -98,7 +98,11 @@ Namespace Controllers
                     emailContentViewModel.StoreName = signupViewModel.StoreName
                     emailContentViewModel.Logo = WebUrl + "Images/nifty-logo.png"
                     Dim html = PartialView("~/Views/Account/_EmailContent.vbhtml", emailContentViewModel).RenderToString()
-                    Utils.SendEmail(signupViewModel.Email, html, "Password Veification Link")
+
+                    If (Not Utils.SendEmail(signupViewModel.Email, html, "Password Veification Link")) Then
+                        Return Json(New With {Key .Message = "Sorry, An error occurred send email failure!", Key .Success = False})
+                    End If
+
                     Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})
                 Else
                     Return Json(New With {Key .Message = "Store Name is already exist. Please change the name", Key .Success = False})
@@ -149,7 +153,11 @@ Namespace Controllers
                 emailContentViewModel.StoreName = String.Empty
                 emailContentViewModel.Logo = WebUrl + "Images/nifty-logo.png"
                 Dim html = PartialView("~/Views/Account/_EmailContent.vbhtml", emailContentViewModel).RenderToString()
-                Utils.SendEmail(email, html, "Reset Password Link")
+
+                If (Not Utils.SendEmail(email, html, "Reset Password Link")) Then
+                    Return Json(New With {Key .Message = "Sorry, An error occured send email failure!", Key .Success = False})
+                End If
+
                 Return Json(New With {Key .Message = "Customer successully added", Key .Success = True})
             Else
                 Return Json(New With {Key .Message = "Email not exist. Please check your email address.", Key .Success = False})

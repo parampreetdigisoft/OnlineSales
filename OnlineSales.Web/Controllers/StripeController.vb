@@ -1,4 +1,5 @@
 ﻿Imports System.Net
+Imports System.Web.Configuration
 Imports System.Web.Http
 Imports Stripe
 
@@ -8,13 +9,22 @@ Public Class StripeController
 
 #Region "Properties"
     Private Property _accountService As IAccount
+    Private Shared Property _stripeApiKey As String
+#End Region
+
+#Region "Constructor"
+    Public Sub New()
+        _accountService = New AccountService()
+        _stripeApiKey = WebConfigurationManager.AppSettings("StripeApiKey")
+        _accountService = New AccountService()
+    End Sub
 #End Region
 
     ' POST api/Stripe/StripeAuth?scope&code
     <HttpGet>
     Public Function StripeAuth(ByVal code As String, ByVal scope As String)
 
-        StripeConfiguration.ApiKey = Utils.StripeApiKey
+        StripeConfiguration.ApiKey = _stripeApiKey
         Dim options = New OAuthTokenCreateOptions With {
             .GrantType = "authorization_code",
             .Code = If(String.IsNullOrEmpty(code), "", Convert.ToString(code))
